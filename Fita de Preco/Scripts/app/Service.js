@@ -14,4 +14,11 @@
         $http.post('/api/v1/public/custo', casa);
          
     }
+
+    //Bloquear Custo
+    this.BloquearDescMin = function (casa) {
+
+        $http.post('/api/v1/public/desconto', casa);
+
+    }
 });

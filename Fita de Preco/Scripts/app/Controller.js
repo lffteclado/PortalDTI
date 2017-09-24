@@ -19,66 +19,133 @@
 /*
 * CONTROLLER VADIESEL
 */
-app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', function ($scope, monitorService, Casa) {
+app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval', function ($scope, monitorService, Casa, $interval) {
 
-    $scope.bloqueado = true;
+    //variaveis utilizadas no Controller vadieselCtrl
+    $scope.custoBloqueado = true;
+    $scope.descMinBloqueado = true;
+    $scope.valorDescMin = "R$51,00";
 
-    $scope.casa = new Casa();
-
+    /*
+    *Bloqueando as vendas abaixo de custo
+    */
     $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
 
-        if ($scope.bloqueado) {
+        //criando o objeto casa atraves da Factory - "custo" Tipo custo - "desc" Desconto Minimo - "plano" Plano de Pagamento
+        var casa = new Casa("custo");
 
-            $scope.casa.CodigoEmpresa = CodigoEmpresa;
-            $scope.casa.CodigoLocal = CodigoLocal;
-            $scope.casa.Bloqueado = "V";
+        if ($scope.custoBloqueado) {
 
-            monitorService.BloquearCusto($scope.casa);
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
 
-            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - VADIESEL"); 
+            monitorService.BloquearCusto(casa);
 
-            var casasData = monitorService.ObterCasas();
+            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - VADIESEL");
 
-            casasData.then(function (casa) {
+        } else if (!$scope.custoBloqueado) {
 
-                var casas = casa.data;
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
 
-                $.each(casas, function (i, item){
-
-                    console.log(item.CodEmpresa);
-
-                });
-
-            }, function () {
-
-                toastr["error"]("Erro ao obter os Registros!", "DTI - Grupo VDL");
-            });
-
-        } else if (!$scope.bloqueado) {
-
-            $scope.casa.CodigoEmpresa = CodigoEmpresa;
-            $scope.casa.CodigoLocal = CodigoLocal;
-            $scope.casa.Bloqueado = "F";
-
-            monitorService.BloquearCusto($scope.casa);
+            monitorService.BloquearCusto(casa);
 
             toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - VADIESEL");
         }
     };
 
-    //Obter Todos os Status de Todas as Casas
-    $scope.obterCasas = function() {
+    /*
+    *Bloqueando o Desconto Minimo
+    */
+    $scope.bloquearDescMin = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "custo" Tipo custo - "desc" Desconto Minimo - "plano" Plano de Pagamento
+        var casa = new Casa("desc");
+
+        if ($scope.descMinBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+            casa.ValorMin = "51.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - VADIESEL");
+
+        } else if (!$scope.descMinBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+            casa.ValorMin = "0.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - VADIESEL");
+        }
+
+    };
+
+    $scope.obterStatus = function () {
 
         var casasData = monitorService.ObterCasas();
 
         casasData.then(function (casa) {
 
-            $scope.casas = casa.data;
+            var casas = casa.data;
+
+            $.each(casas, function (i, item) {
+
+                //console.log(item.CodEmpresa);
+
+                if (item.CodEmpresa == "130") {
+
+                    //console.log(item.NomeEmpresa);
+
+                    if (item.VendaAbaixoCusto == "V"){
+
+                        $scope.custoBloqueado = true;
+
+                        //toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - VADIESEL");
+
+                    } else {
+
+                        $scope.custoBloqueado = false;
+
+                        //toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - VADIESEL");
+                    }
+
+                    if (item.DescontoMinimo == "V") {
+
+                        $scope.descMinBloqueado = true;
+                        $scope.valorDescMin = item.ValorDescMinimo;
+
+                    } else {
+
+                        $scope.descMinBloqueado = false;
+                        $scope.valorDescMin = item.ValorDescMinimo;
+                    }
+                }
+            });
 
         }, function () {
 
             toastr["error"]("Erro ao obter os Registros!", "DTI - Grupo VDL");
         });
+
+    }
+
+    $scope.atualizaCasa = function () {
+
+        $interval(function () {
+
+            $scope.obterStatus();
+
+        }, 5000);
+
     }
 
 }]);

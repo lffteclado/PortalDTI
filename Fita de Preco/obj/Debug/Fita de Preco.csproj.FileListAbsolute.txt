@@ -1,0 +1,166 @@
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.csprojResolveAssemblyReference.cache
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\ApplicationInsights.config
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\csc.exe
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\vbc.exe
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\VBCSCompiler.exe
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Fita de Preco.dll.config
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Fita de Preco.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Fita de Preco.pdb
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Antlr3.Runtime.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Web.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Newtonsoft.Json.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Helpers.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Mvc.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Optimization.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Razor.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Razor.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\WebGrease.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Web.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Helpers.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Mvc.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Optimization.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Razor.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Razor.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Antlr3.Runtime.pdb
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\bin\Newtonsoft.Json.xml
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.dll
+C:\Users\Luis Felipe.LuisFelipe-PC\documents\visual studio 2015\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.pdb
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\ApplicationInsights.config
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\csc.exe
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\vbc.exe
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\VBCSCompiler.exe
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Fita de Preco.dll.config
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Fita de Preco.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Fita de Preco.pdb
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Antlr3.Runtime.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Web.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.ApplicationInsights.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Newtonsoft.Json.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Helpers.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Mvc.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Optimization.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Razor.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Deployment.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Razor.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\WebGrease.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Web.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.ApplicationInsights.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Helpers.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Mvc.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Optimization.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.Razor.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Antlr3.Runtime.pdb
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\bin\Newtonsoft.Json.xml
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.csprojResolveAssemblyReference.cache
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.dll
+C:\Users\User\Source\Repos\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.pdb
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\ApplicationInsights.config
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\csc.exe
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\System.Collections.Immutable.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\System.Reflection.Metadata.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\vbc.exe
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\VBCSCompiler.exe
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\roslyn\VBCSCompiler.exe.config
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Fita de Preco.dll.config
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Fita de Preco.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Fita de Preco.pdb
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Antlr3.Runtime.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.DependencyCollector.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Web.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.WindowsServer.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.ApplicationInsights.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.Web.Infrastructure.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Newtonsoft.Json.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Net.Http.Formatting.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Helpers.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Http.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Http.WebHost.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Mvc.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Optimization.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Razor.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Deployment.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Razor.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\WebGrease.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.DependencyCollector.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.Web.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.AI.WindowsServer.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.ApplicationInsights.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Net.Http.Formatting.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Http.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Http.WebHost.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Helpers.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Mvc.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Optimization.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.Razor.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Deployment.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\System.Web.WebPages.Razor.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Antlr3.Runtime.pdb
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\bin\Newtonsoft.Json.xml
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.csprojResolveAssemblyReference.cache
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.csproj.CoreCompileInputs.cache
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.dll
+E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.pdb

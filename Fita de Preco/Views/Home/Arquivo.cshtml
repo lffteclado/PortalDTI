@@ -1,0 +1,22 @@
+﻿@model IList<Fita_de_Preco.Models.UploadFileResult>
+@{
+    ViewBag.Title = "Corrigir Arquivos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div><h4><span class="label label-success">@ViewData["Message"]</span></h4></div>
+        <div><h4><span class="label label-danger">@ViewData["MessageErro"]</span></h4></div>
+        <div class="alert alert-info" role="alert">Para correção de preço de item escolha a <em>Concessionária</em> e clique em corrigir:</div>
+        @using (Html.BeginForm("Arquivo", "Home", FormMethod.Post))
+        {
+            <div class="dropdown">
+                @*Passando o Nome da ViewBag*@
+                @Html.DropDownList("CodConcessionaria", String.Empty)
+            </div>
+            <br />
+            <input type="submit" value="Corrigir Arquivo" class="btn btn-default" />
+            <br />
+        }
+    </div>
+</div>

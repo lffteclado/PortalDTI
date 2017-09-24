@@ -1,0 +1,228 @@
+﻿<div class="row" ng-app="appMonitor">
+    <div class="col-md-3" ng-controller="vadieselCtrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Vadiesel</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Vendas Abaixo do Custo: &nbsp;<input type="checkbox" ng-change="bloquearCusto(130,0)" id="abaixoCustoVad" class="checkbox-inline" ng-model="bloqueado" /></li>
+                    <li class="list-group-item">Deconto < R$ 51:<button ng-click="obterCasas()">Buscar</button></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo:</li>
+                    <li class="list-group-item">Venda Atípica:</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" ng-controller="calistoCtrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Calisto</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: &nbsp;<input type="checkbox" ng-change="bloquearCusto(262,0)" id="abaixoCustoCal" class="checkbox-inline" ng-model="bloqueado" /></li>
+                    <li class="list-group-item">Deconto < R$ 51: <span class=""></span></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <span class=""></span></li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" ng-controller="cardieselCtrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Cardiesel</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: &nbsp;<input type="checkbox" ng-change="bloquearCusto(930,0)" id="abaixoCustoCal" class="checkbox-inline" ng-model="bloqueado" /></li>
+                    <li class="list-group-item">Deconto < R$ 51: <span class=""></span></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <span class=""></span></li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Rede Mineira</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: <span class=""></span></li>
+                    <li class="list-group-item">Deconto < R$ 51: <span class=""></span></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <span class=""></span></li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Deconto < R$ 51:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Venda Atípica: <span class=""></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Deconto < R$ 51:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Deconto < R$ 51: <br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo: <br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo: <br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Deconto < R$ 51: <br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo: <br />
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Deconto < R$ 51:<br />
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Deconto < R$ 51:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class=""></span>
+                        <span class=""></span>
+                        <span class=""></span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class=""></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

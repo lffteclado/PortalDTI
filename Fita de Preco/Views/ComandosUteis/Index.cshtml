@@ -9,7 +9,7 @@
                     <li class="list-group-item">Vendas Abaixo do Custo: &nbsp;<input type="checkbox" ng-change="bloquearCusto(130,0)" id="abaixoCustoVad" class="checkbox-inline" ng-model="custoBloqueado" /></li>
                     <li class="list-group-item">Desconto < R$ 51: &nbsp;<input type="checkbox" ng-change="bloquearDescMin(130,0)" id="descontoMinVad" ng-model="descMinBloqueado" /></li>
                     <li class="list-group-item">Valor do Desconto Mínimo:&nbsp;<label id="valorDescMinVad">{{valorDescMin}}</label></li>
-                    <li class="list-group-item">Venda Atípica:</li>
+                    <li class="list-group-item">Venda Atípica:&nbsp;<input type="checkbox" ng-change="bloquearPlano(130, 526)" id="planoPagamentoVad" ng-model="planoBloqueado" /></li>
                 </ul>
             </div>
         </div>

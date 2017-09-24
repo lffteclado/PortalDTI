@@ -5,7 +5,6 @@
 
         return $http.get("/api/v1/public/statusPlanos");
 
-
     }
 
     //Bloquear Custo
@@ -19,6 +18,13 @@
     this.BloquearDescMin = function (casa) {
 
         $http.post('/api/v1/public/desconto', casa);
+
+    }
+
+    //Bloquear Plano de Pagamento
+    this.BloquearPlano = function (casa) {
+
+        $http.post('/api/v1/public/planos', casa);
 
     }
 });

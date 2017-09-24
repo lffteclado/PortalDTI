@@ -24,6 +24,7 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
     //variaveis utilizadas no Controller vadieselCtrl
     $scope.custoBloqueado = true;
     $scope.descMinBloqueado = true;
+    $scope.planoBloqueado = true;
     $scope.valorDescMin = "R$51,00";
 
     /*
@@ -31,7 +32,7 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
     */
     $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
 
-        //criando o objeto casa atraves da Factory - "custo" Tipo custo - "desc" Desconto Minimo - "plano" Plano de Pagamento
+        //criando o objeto casa atraves da Factory - "custo" Tipo custo
         var casa = new Casa("custo");
 
         if ($scope.custoBloqueado) {
@@ -53,6 +54,9 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
             monitorService.BloquearCusto(casa);
 
             toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - VADIESEL");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
         }
     };
 
@@ -61,7 +65,7 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
     */
     $scope.bloquearDescMin = function (CodigoEmpresa, CodigoLocal) {
 
-        //criando o objeto casa atraves da Factory - "custo" Tipo custo - "desc" Desconto Minimo - "plano" Plano de Pagamento
+        //criando o objeto casa atraves da Factory - "desc" Desconto Minimo
         var casa = new Casa("desc");
 
         if ($scope.descMinBloqueado) {
@@ -73,7 +77,7 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
 
             monitorService.BloquearDescMin(casa);
 
-            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - VADIESEL");
+            toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - VADIESEL");
 
         } else if (!$scope.descMinBloqueado) {
 
@@ -84,11 +88,49 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
 
             monitorService.BloquearDescMin(casa);
 
-            toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - VADIESEL");
+            toastr["warning"]("Desconto Mínimo Desbloqueado com sucesso!", "DESCONTO MÍNIMO - VADIESEL");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Desconto Mínimo!", "DTI - Grupo VDL");
         }
 
     };
 
+    $scope.bloquearPlano = function (CodigoEmpresa, CodigoPlano) {
+
+        //criando o objeto casa atraves da Factory - "plano" Plano de Pagamento
+        var casa = new Casa("plano");
+
+        if ($scope.planoBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoPlano = CodigoPlano;
+            casa.PlanoBloqueado = "V";
+
+            monitorService.BloquearPlano(casa);
+
+            toastr["success"]("Plano de Pagamento Bloqueado com sucesso!", "PLANO DE PAGAMENTO - VADIESEL");
+
+        } else if (!$scope.planoBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoPlano = CodigoPlano;
+            casa.PlanoBloqueado = "F";
+
+            monitorService.BloquearPlano(casa);
+
+            toastr["warning"]("Plano de Pagamento Desbloqueado com sucesso!", "PLANO DE PAGAMENTO - VADIESEL");
+
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Plano de Pagamento!", "DTI - Grupo VDL");
+        }
+
+    }
+
+    /*
+    *Atualizando os checkbox com o status da casa
+    */
     $scope.obterStatus = function () {
 
         var casasData = monitorService.ObterCasas();
@@ -99,11 +141,7 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
 
             $.each(casas, function (i, item) {
 
-                //console.log(item.CodEmpresa);
-
                 if (item.CodEmpresa == "130") {
-
-                    //console.log(item.NomeEmpresa);
 
                     if (item.VendaAbaixoCusto == "V"){
 
@@ -128,6 +166,16 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
                         $scope.descMinBloqueado = false;
                         $scope.valorDescMin = item.ValorDescMinimo;
                     }
+
+                    if (item.PlanoBloqueio == "V") {
+
+                        $scope.planoBloqueado = true;
+
+                    } else {
+
+                        $scope.planoBloqueado = false;
+
+                    }
                 }
             });
 
@@ -138,6 +186,9 @@ app.controller('vadieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval',
 
     }
 
+    /*
+    *Temporizador para atualizar de 5 em 5 minutos
+    */
     $scope.atualizaCasa = function () {
 
         $interval(function () {

@@ -27,4 +27,55 @@
         $http.post('/api/v1/public/planos', casa);
 
     }
+
+    //Bloquear Tudo
+    this.BloquearTudo = function () {
+
+        var casasData = $http.get("/api/v1/public/statusPlanos");
+
+        casasData.then(function (casa) {
+
+            var casas = casa.data;
+
+            $.each(casas, function (i, item) {
+           
+                //Bloquear Custo
+                var custo = {
+
+                    "CodigoEmpresa" : item.CodEmpresa,
+                    "CodigoLocal" : item.Local,
+                    "Bloqueado" : "V"
+                }
+
+                $http.post('/api/v1/public/custo', custo);
+
+                //Bloquear Desconto Minimo
+                var desc = {
+
+                    "CodigoEmpresa" : item.CodEmpresa,
+                    "CodigoLocal" : item.Local,
+                    "Bloqueado" : "V",
+                    "ValorMin" : "51.00"
+                }
+                
+                $http.post('/api/v1/public/desconto', desc);
+
+                //Bloquear Plano
+                var plano = {
+
+                    "CodigoEmpresa" : item.CodEmpresa,
+                    "CodigoPlano" : 526,
+                    "PlanoBloqueado" : "V"
+                }
+
+                $http.post('/api/v1/public/planos', plano);
+
+            });
+
+        }, function () {
+
+            toastr["error"]("Erro ao realizar os serviços de bloqueio!", "DTI - Grupo VDL");
+        });
+    }
+
 });

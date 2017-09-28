@@ -10,6 +10,7 @@ namespace Fita_de_Preco.Controllers
     public class ComandosUteisController : Controller
     {
         // GET: ComandosUteis
+        [Authorize]
         public ActionResult Index()
         {
            

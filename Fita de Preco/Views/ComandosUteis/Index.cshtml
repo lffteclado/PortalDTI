@@ -1,4 +1,7 @@
-﻿<div ng-app="appMonitor">
+﻿@{
+    ViewBag.Title = "Util";
+}
+<div ng-app="appMonitor">
     <div class="row">
         <div class="col-md-3" ng-controller="vadieselCtrl" ng-init="atualizaCasa()">
             <div class="panel panel-default">
@@ -89,18 +92,30 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" ng-controller="autoCtrl" ng-init="atualizaCasa()">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Auto Sete</h3>
                 </div>
                 <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <input type="checkbox" name="teste" value="teste" />
-                            <input type="checkbox" name="teste" value="teste2" />
-                        </li>
-                    </ul>
+                    <table class="table-striped">
+                        <tr class="list-group-item">
+                            <td>Vendas Abaixo do Custo:&nbsp;&nbsp;Matriz&nbsp;<input type="checkbox" ng-change="bloquearCusto(1200,0)" id="abaixoCustoAut" class="checkbox-inline" ng-model="custoBloqueado" /></td>
+                            <td>&nbsp;&nbsp;Filial&nbsp;<input type="checkbox" ng-change="bloquearCustoF(1200,2)" id="abaixoCustoAutF" class="checkbox-inline" ng-model="custoBloqueadoF" /></td>
+                        </tr>
+                        <tr class="list-group-item">
+                            <td>Desconto < R$ 51:&nbsp;&nbsp;Matriz&nbsp;<input type="checkbox" ng-change="bloquearDescMin(1200,0)" id="descontoMinAut" ng-model="descMinBloqueado" /></td>
+                            <td>&nbsp;&nbsp;Filial&nbsp;<input type="checkbox" ng-change="bloquearDescMinF(1200,2)" id="descontoMinAutF" ng-model="descMinBloqueadoF" /></td>
+                        </tr>
+                        <tr class="list-group-item">
+                            <td>Valor do Desconto Mínimo:</td>
+                            <td>Matriz&nbsp;<label id="valorDescMinAut">{{valorDescMin}}</label></td>
+                            <td>Filial&nbsp;<label id="valorDescMinAutF">{{valorDescMinF}}</label></td>
+                        </tr>
+                        <tr class="list-group-item">
+                            <td>Venda Atípica:&nbsp;&nbsp;<input type="checkbox" ng-change="bloquearPlano(1200, 526)" id="planoPagamentoAut" ng-model="planoBloqueado" /></td>
+                        </tr>
+                    </table>   
                 </div>
             </div>
         </div>
@@ -110,12 +125,7 @@
                     <h3 class="panel-title">Goias</h3>
                 </div>
                 <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <input type="checkbox" name="teste" value="teste" />
-                            <input type="checkbox" name="teste" value="teste2" />
-                        </li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>

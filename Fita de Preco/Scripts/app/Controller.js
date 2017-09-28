@@ -404,7 +404,7 @@ app.controller('cardieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval'
     $scope.descMinBloqueado = true;
     $scope.planoBloqueado = true;
     $scope.valorDescMin = "R$51,00";
-    $scope.NomeEmpresa = "";
+    //$scope.NomeEmpresa = "";
 
     /*
      *Bloqueando as vendas abaixo de custo
@@ -523,7 +523,7 @@ app.controller('cardieselCtrl', ['$scope', 'monitorService', 'Casa', '$interval'
 
             $.each(casas, function (i, item) {
 
-                if (item.CodEmpresa == "930") {
+                if (item.CodEmpresa == "930" && item.Local == "0") {
 
                     $scope.NomeEmpresa = item.NomeEmpresa;
 
@@ -793,7 +793,7 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
     $scope.NomeEmpresa = "";
 
     /*
-     *Bloqueando as vendas abaixo de custo
+     *Bloqueando as vendas abaixo de custo MATRIZ
      */
     $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
 
@@ -825,6 +825,9 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
         }
     };
 
+    /*
+     *Bloqueando as vendas abaixo de custo FILIAL
+     */
     $scope.bloquearCustoF = function (CodigoEmpresa, CodigoLocal) {
 
         var casa = new Casa("custo");
@@ -839,7 +842,7 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
 
             toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - POSTO IMPERIAL");
 
-        } else if (!$scope.custoBloqueadoF) {
+         } else if (!$scope.custoBloqueadoF) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -848,21 +851,21 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
             monitorService.BloquearCusto(casa);
 
             toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - POSTO IMPERIAL");
-        } else {
+         } else {
 
             toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
         }
     }
 
     /*
-   *Bloqueando o Desconto Minimo
+   *Bloqueando o Desconto Minimo MATRIZ
    */
     $scope.bloquearDescMin = function (CodigoEmpresa, CodigoLocal) {
 
         //criando o objeto casa atraves da Factory - "desc" Desconto Minimo
         var casa = new Casa("desc");
 
-        if ($scope.descMinBloqueado || $scope.descMinBloqueadoF) {
+        if ($scope.descMinBloqueado) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -873,7 +876,7 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
 
             toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - POSTO IMPERIAL");
 
-        } else if (!$scope.descMinBloqueado || !$scope.descMinBloqueadoF) {
+        } else if (!$scope.descMinBloqueado) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -883,6 +886,44 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
             monitorService.BloquearDescMin(casa);
 
             toastr["warning"]("Desconto Mínimo Desbloqueado com sucesso!", "DESCONTO MÍNIMO - POSTO IMPERIAL");
+
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Desconto Mínimo!", "DTI - Grupo VDL");
+        }
+
+    };
+
+    /*
+   *Bloqueando o Desconto Minimo FILIAL
+   */
+    $scope.bloquearDescMinF = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "desc" Desconto Minimo
+        var casa = new Casa("desc");
+
+        if ($scope.descMinBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+            casa.ValorMin = "51.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - POSTO IMPERIAL");
+
+        } else if (!$scope.descMinBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+            casa.ValorMin = "0.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["warning"]("Desconto Mínimo Desbloqueado com sucesso!", "DESCONTO MÍNIMO - POSTO IMPERIAL");
+
         } else {
 
             toastr["error"]("Erro ao tentar bloquear ou desbloquear o Desconto Mínimo!", "DTI - Grupo VDL");
@@ -1040,13 +1081,20 @@ app.controller('autoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
 
     //variaveis utilizadas no Controller calistoCtrl
     $scope.custoBloqueado = true;
+    $scope.custoBloqueadoF = true;
+
     $scope.descMinBloqueado = true;
-    $scope.planoBloqueado = true;
+    $scope.descMinBloqueadoF = true;
+
     $scope.valorDescMin = "R$51,00";
-    $scope.NomeEmpresa = "";
+    $scope.valorDescMinF = "R$51,00";
+
+    $scope.planoBloqueado = true;
+
+    //$scope.NomeEmpresa = "";
 
     /*
-     *Bloqueando as vendas abaixo de custo
+     *Bloqueando as vendas abaixo de custo MATRIZ
      */
     $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
 
@@ -1079,7 +1127,40 @@ app.controller('autoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
     };
 
     /*
-   *Bloqueando o Desconto Minimo
+    *Bloqueando as vendas abaixo de custo FILIAL
+    */
+    $scope.bloquearCustoF = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "custo" Tipo custo
+        var casa = new Casa("custo");
+
+        if ($scope.custoBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - AUTO SETE");
+
+        } else if (!$scope.custoBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - AUTO SETE");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
+        }
+    }
+
+    /*
+   *Bloqueando o Desconto Minimo MATRIZ
    */
     $scope.bloquearDescMin = function (CodigoEmpresa, CodigoLocal) {
 
@@ -1098,6 +1179,42 @@ app.controller('autoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
             toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - AUTO SETE");
 
         } else if (!$scope.descMinBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+            casa.ValorMin = "0.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["warning"]("Desconto Mínimo Desbloqueado com sucesso!", "DESCONTO MÍNIMO - AUTO SETE");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Desconto Mínimo!", "DTI - Grupo VDL");
+        }
+
+    };
+
+    /*
+   *Bloqueando o Desconto Minimo FILIAL
+   */
+    $scope.bloquearDescMinF = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "desc" Desconto Minimo
+        var casa = new Casa("desc");
+
+        if ($scope.descMinBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+            casa.ValorMin = "51.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - AUTO SETE");
+
+        } else if (!$scope.descMinBloqueadoF) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -1164,27 +1281,61 @@ app.controller('autoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
 
                 if (item.CodEmpresa == "1200") {
 
-                    $scope.NomeEmpresa = item.NomeEmpresa;
+                    //$scope.NomeEmpresa = item.NomeEmpresa;
 
                     if (item.VendaAbaixoCusto == "V") {
 
-                        $scope.custoBloqueado = true;
+                        if (item.Local == "0") {
+
+                            $scope.custoBloqueado = true;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.custoBloqueadoF = true;
+
+                        }
 
                     } else {
 
-                        $scope.custoBloqueado = false;
+                        if (item.Local == "0") {
+
+                            $scope.custoBloqueado = false;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.custoBloqueadoF = false;
+
+                        }
 
                     }
 
                     if (item.DescontoMinimo == "V") {
 
-                        $scope.descMinBloqueado = true;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                        if (item.Local == "0") {
+
+                            $scope.descMinBloqueado = true;
+                            $scope.valorDescMin = item.ValorDescMinimo;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.descMinBloqueadoF = true;
+                            $scope.valorDescMinF = item.ValorDescMinimo;
+
+                        }                       
 
                     } else {
 
-                        $scope.descMinBloqueado = false;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                        if (item.Local == "0") {
+
+                            $scope.descMinBloqueado = false;
+                            $scope.valorDescMin = item.ValorDescMinimo;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.descMinBloqueadoF = false;
+                            $scope.valorDescMinF = item.ValorDescMinimo;
+
+                        }
 
                     }
 
@@ -1230,13 +1381,20 @@ app.controller('goiasCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
 
     //variaveis utilizadas no Controller calistoCtrl
     $scope.custoBloqueado = true;
+    $scope.custoBloqueadoF = true;
+
     $scope.descMinBloqueado = true;
-    $scope.planoBloqueado = true;
+    $scope.descMinBloqueadoF = true;
+
     $scope.valorDescMin = "R$51,00";
-    $scope.NomeEmpresa = "";
+    $scope.valorDescMinF = "R$51,00";
+
+    $scope.planoBloqueado = true;
+    
+    //$scope.NomeEmpresa = "";
 
     /*
-     *Bloqueando as vendas abaixo de custo
+     *Bloqueando as vendas abaixo de custo MATRIZ
      */
     $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
 
@@ -1254,6 +1412,39 @@ app.controller('goiasCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
             toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - GOIÁS");
 
         } else if (!$scope.custoBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - GOIÁS");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
+        }
+    };
+
+    /*
+     *Bloqueando as vendas abaixo de custo FILIAL
+     */
+    $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "custo" Tipo custo
+        var casa = new Casa("custo");
+
+        if ($scope.custoBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - GOIÁS");
+
+        } else if (!$scope.custoBloqueadoF) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;

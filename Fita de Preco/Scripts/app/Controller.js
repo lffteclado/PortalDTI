@@ -800,7 +800,7 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
         //criando o objeto casa atraves da Factory - "custo" Tipo custo
         var casa = new Casa("custo");
 
-        if ($scope.custoBloqueado || $scope.custoBloqueadoF) {
+        if ($scope.custoBloqueado) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -810,7 +810,7 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
 
             toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - POSTO IMPERIAL");
 
-        } else if (!$scope.custoBloqueado || !$scope.custoBloqueadoF) {
+        } else if (!$scope.custoBloqueado) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -824,6 +824,35 @@ app.controller('postoCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
             toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
         }
     };
+
+    $scope.bloquearCustoF = function (CodigoEmpresa, CodigoLocal) {
+
+        var casa = new Casa("custo");
+
+         if ($scope.custoBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - POSTO IMPERIAL");
+
+        } else if (!$scope.custoBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - POSTO IMPERIAL");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
+        }
+    }
 
     /*
    *Bloqueando o Desconto Minimo

@@ -68,27 +68,28 @@
                     <h3 class="panel-title">Posto Imperial</h3>
                 </div>
                 <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">Vendas Abaixo do Custo:&nbsp;
-                            <input type="checkbox" ng-change="bloquearCusto(2890,0)" name="abaixoCustoPos" class="checkbox-inline" ng-model="custoBloqueado" />
-                            <input type="checkbox" ng-change="bloquearCusto(2890,1)" name="abaixoCustoPos" class="checkbox-inline" ng-model="custoBloqueadoF" />
-                        </li>
-                        <li class="list-group-item">Desconto < R$ 51:&nbsp;
-                            <input type="checkbox" ng-change="bloquearDescMin(2890,0)" id="descontoMinPos" ng-model="descMinBloqueado" />
-                            <input type="checkbox" ng-change="bloquearDescMin(2890,1)" id="descontoMinPosF" ng-model="descMinBloqueadoF" />
-                        </li>
-                        <li class="list-group-item">Valor do Desconto Mínimo:<br />
-                            <label id="valorDescMinPos">{{valorDescMin}}</label>&nbsp;&mdash;&nbsp;
-                            <label id="valorDescMinPosF">{{valorDescMinF}}</label>
-                        </li>
-                        <li class="list-group-item">Venda Atípica:&nbsp;
-                            <input type="checkbox" ng-change="bloquearPlano(2890, 526)" id="planoPagamentoPos" ng-model="planoBloqueado" />
-                        </li>
-                    </ul>
+                    <table class="table-striped">
+                        <tr class="list-group-item">
+                            <td>Vendas Abaixo do Custo:&nbsp;&nbsp;Matriz&nbsp;<input type="checkbox" ng-change="bloquearCusto(2890,0)" id="abaixoCustoPos" class="checkbox-inline" ng-model="custoBloqueado" /></td>
+                            <td>&nbsp;&nbsp;Filial&nbsp;<input type="checkbox" ng-change="bloquearCustoF(2890,1)" id="abaixoCustoPosF" class="checkbox-inline" ng-model="custoBloqueadoF" /></td>
+                        </tr>
+                        <tr class="list-group-item">
+                            <td>Desconto < R$ 51:&nbsp;&nbsp;Matriz&nbsp;<input type="checkbox" ng-change="bloquearDescMin(2890,0)" id="descontoMinPos" ng-model="descMinBloqueado" /></td>
+                            <td>&nbsp;&nbsp;Filial&nbsp;<input type="checkbox" ng-change="bloquearDescMin(2890,1)" id="descontoMinPosF" ng-model="descMinBloqueadoF" /></td>
+                        </tr>
+                        <tr class="list-group-item">
+                            <td>Valor do Desconto Mínimo:</td>
+                            <td>Matriz&nbsp;<label id="valorDescMinPos">{{valorDescMin}}</label></td>
+                            <td>Filial&nbsp;<label id="valorDescMinPosF">{{valorDescMinF}}</label></td>
+                        </tr>
+                        <tr class="list-group-item">
+                            <td>Venda Atípica:&nbsp;&nbsp;<input type="checkbox" ng-change="bloquearPlano(2890, 526)" id="planoPagamentoPos" ng-model="planoBloqueado" /></td>
+                        </tr>
+                    </table>                 
                 </div>
             </div>
         </div>
-        <div class="col-md-4" ng-controller="autoCtrl" ng-init="atualizaCasa()">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Auto Sete</h3>
@@ -96,140 +97,26 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            Vendas Abaixo do Custo:&nbsp;
-                            <input type="checkbox" ng-change="bloquearCusto(1200,0)" id="abaixoCustoAut" class="checkbox-inline" ng-model="custoBloqueado" />
-                            <input type="checkbox" ng-change="bloquearCusto(1200,1)" id="abaixoCustoAutF" class="checkbox-inline" ng-model="custoBloqueadoF" />
-                        </li>
-                        <li class="list-group-item">
-                            Desconto < R$ 51:&nbsp;
-                            <input type="checkbox" ng-change="bloquearDescMin(1200,0)" id="descontoMinAut" ng-model="descMinBloqueado" />
-                            <input type="checkbox" ng-change="bloquearDescMin(1200,1)" id="descontoMinAutF" ng-model="descMinBloqueadoF" />
-                        </li>
-                        <li class="list-group-item">
-                            Valor do Desconto Mínimo:<br />
-                            <label id="valorDescMinAut">{{valorDescMin}}</label>&nbsp;&mdash;&nbsp;
-                            <label id="valorDescMinAutF">{{valorDescMinF}}</label>
-                        </li>
-                        <li class="list-group-item">
-                            Venda Atípica:&nbsp;
-                            <input type="checkbox" ng-change="bloquearPlano(1200, 526)" id="planoPagamentoAut" ng-model="planoBloqueado" />
+                            <input type="checkbox" name="teste" value="teste" />
+                            <input type="checkbox" name="teste" value="teste2" />
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="col-md-4" ng-controller="goiasCtrl" ng-init="atualizaCasa()">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Goiás</h3>
+                    <h3 class="panel-title">Goias</h3>
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            Vendas Abaixo do Custo:&nbsp;
-                            <input type="checkbox" ng-change="bloquearCusto(2630,0)" id="abaixoCustoGoi" class="checkbox-inline" ng-model="custoBloqueado" />
-                            <input type="checkbox" ng-change="bloquearCusto(2630,1)" id="abaixoCustoGoiF" class="checkbox-inline" ng-model="custoBloqueadoF" />
-                        </li>
-                        <li class="list-group-item">
-                            Desconto < R$ 51:&nbsp;
-                            <input type="checkbox" ng-change="bloquearDescMin(2630,0)" id="descontoMinGoi" ng-model="descMinBloqueado" />
-                            <input type="checkbox" ng-change="bloquearDescMin(2630,1)" id="descontoMinGoiF" ng-model="descMinBloqueadoF" />
-                        </li>
-                        <li class="list-group-item">
-                            Valor do Desconto Mínimo:<br />
-                            <label id="valorDescMinGoi">{{valorDescMin}}</label>&nbsp;&mdash;&nbsp;
-                            <label id="valorDescMinGoiF">{{valorDescMinF}}</label>
-                        </li>
-                        <li class="list-group-item">
-                            Venda Atípica:&nbsp;
-                            <input type="checkbox" ng-change="bloquearPlano(2630, 526)" id="planoPagamentoGoi" ng-model="planoBloqueado" />
+                            <input type="checkbox" name="teste" value="teste" />
+                            <input type="checkbox" name="teste" value="teste2" />
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4" ng-controller="uberCtrl" ng-init="atualizaCasa()">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Uberlandia</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            Abaixo do custo: <br />
-                        </li>
-                        <li class="list-group-item">
-                            Desconto < R$ 51: <br />
-                            <span class=""></span>
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">
-                            Valor do Desconto Mínimo: <br />
-                            <span class=""></span>
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">Venda Atípica: <span class=""></span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4" ng-controller="valadaresCtrl" ng-init="atualizaCasa()">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Valadares</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            Abaixo do custo:<br />
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">
-                            Desconto < R$ 51:<br />
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">
-                            Valor do Desconto Mínimo:<br />
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">Venda Atípica: <span class=""></span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4" ng-controller="mocCtrl" ng-init="atualizaCasa()">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Montes Claros</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            Abaixo do custo:<br />
-                            <span class=""></span>
-                            <span class=""></span>
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">
-                            Desconto < R$ 51:<br />
-                            <span class=""></span>
-                            <span class=""></span>
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">
-                            Valor do Desconto Mínimo:<br />
-                            <span class=""></span>
-                            <span class=""></span>
-                            <span class=""></span>
-                        </li>
-                        <li class="list-group-item">Venda Atípica: <span class=""></span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12" ng-controller="tudoCtrl">
-            <div class="form-group">
-                <button class="btn btn-danger" ng-click="bloqueiaTudo();">Bloquear Tudo!!!</button>
             </div>
         </div>
     </div>

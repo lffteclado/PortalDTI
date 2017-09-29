@@ -1429,7 +1429,7 @@ app.controller('goiasCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
     /*
      *Bloqueando as vendas abaixo de custo FILIAL
      */
-    $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
+    $scope.bloquearCustoF = function (CodigoEmpresa, CodigoLocal) {
 
         //criando o objeto casa atraves da Factory - "custo" Tipo custo
         var casa = new Casa("custo");
@@ -1460,7 +1460,7 @@ app.controller('goiasCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
     };
 
     /*
-   *Bloqueando o Desconto Minimo
+   *Bloqueando o Desconto Minimo MATRIZ
    */
     $scope.bloquearDescMin = function (CodigoEmpresa, CodigoLocal) {
 
@@ -1479,6 +1479,42 @@ app.controller('goiasCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
             toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - GOIÁS");
 
         } else if (!$scope.descMinBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+            casa.ValorMin = "0.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["warning"]("Desconto Mínimo Desbloqueado com sucesso!", "DESCONTO MÍNIMO - GOIÁS");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Desconto Mínimo!", "DTI - Grupo VDL");
+        }
+
+    };
+
+    /*
+   *Bloqueando o Desconto Minimo FILIAL
+   */
+    $scope.bloquearDescMinF = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "desc" Desconto Minimo
+        var casa = new Casa("desc");
+
+        if ($scope.descMinBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+            casa.ValorMin = "51.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - GOIÁS");
+
+        } else if (!$scope.descMinBloqueadoF) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -1548,25 +1584,56 @@ app.controller('goiasCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fu
                     $scope.NomeEmpresa = item.NomeEmpresa;
 
                     if (item.VendaAbaixoCusto == "V") {
+                                                
+                        if (item.Local == "0"){
 
-                        $scope.custoBloqueado = true;
+                            $scope.custoBloqueado = true;
+
+                        } else if (item.Local == "1") {
+
+                            $scope.custoBloqueadoF = true;
+                        }
 
                     } else {
 
-                        $scope.custoBloqueado = false;
+                        if (item.Local == "0") {
+                            
+                            $scope.custoBloqueado = false;
+
+                        } else if (item.Local == "1"){
+
+                            $scope.custoBloqueadoF = false;
+                        }                       
 
                     }
 
-                    if (item.DescontoMinimo == "V") {
+                    if (item.DescontoMinimo == "V") {                        
 
-                        $scope.descMinBloqueado = true;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                        if (item.Local == "0") {
+
+                            $scope.descMinBloqueado = true;
+                            $scope.valorDescMin = item.ValorDescMinimo;
+
+                        } else if (item.Local == "1") {
+
+                            $scope.descMinBloqueadoF = true;
+                            $scope.valorDescMinF = item.ValorDescMinimo;
+
+                        }
 
                     } else {
 
-                        $scope.descMinBloqueado = false;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                        if (item.Local == "0") {
 
+                            $scope.descMinBloqueado = false;
+                            $scope.valorDescMin = item.ValorDescMinimo;
+
+                        } else if (item.Local == "1") {
+
+                            $scope.descMinBloqueadoF = false;
+                            $scope.valorDescMinF = item.ValorDescMinimo;
+
+                        }               
                     }
 
                     if (item.PlanoBloqueio == "V") {
@@ -1611,13 +1678,20 @@ app.controller('uberCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
 
     //variaveis utilizadas no Controller calistoCtrl
     $scope.custoBloqueado = true;
+    $scope.custoBloqueadoF = true;
+
     $scope.descMinBloqueado = true;
-    $scope.planoBloqueado = true;
+    $scope.descMinBloqueadoF = true;
+
     $scope.valorDescMin = "R$51,00";
-    $scope.NomeEmpresa = "";
+    $scope.valorDescMinF = "R$51,00";
+
+    $scope.planoBloqueado = true;
+    
+    //$scope.NomeEmpresa = "";
 
     /*
-     *Bloqueando as vendas abaixo de custo
+     *Bloqueando as vendas abaixo de custo MATRIZ
      */
     $scope.bloquearCusto = function (CodigoEmpresa, CodigoLocal) {
 
@@ -1650,7 +1724,41 @@ app.controller('uberCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
     };
 
     /*
-   *Bloqueando o Desconto Minimo
+     *Bloqueando as vendas abaixo de custo FILIAL
+     */
+    $scope.bloquearCustoF = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "custo" Tipo custo
+        var casa = new Casa("custo");
+
+        if ($scope.custoBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["success"]("Custo Bloqueado com sucesso!", "CUSTO - UBERLANDIA");
+
+        } else if (!$scope.custoBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+
+            monitorService.BloquearCusto(casa);
+
+            toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - UBERLANDIA");
+
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
+        }
+    };
+
+    /*
+   *Bloqueando o Desconto Minimo MATRIZ
    */
     $scope.bloquearDescMin = function (CodigoEmpresa, CodigoLocal) {
 
@@ -1669,6 +1777,42 @@ app.controller('uberCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
             toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - UBERLANDIA");
 
         } else if (!$scope.descMinBloqueado) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "F";
+            casa.ValorMin = "0.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["warning"]("Desconto Mínimo Desbloqueado com sucesso!", "DESCONTO MÍNIMO - UBERLANDIA");
+        } else {
+
+            toastr["error"]("Erro ao tentar bloquear ou desbloquear o Desconto Mínimo!", "DTI - Grupo VDL");
+        }
+
+    };
+
+    /*
+   *Bloqueando o Desconto Minimo FILIAL
+   */
+    $scope.bloquearDescMinF = function (CodigoEmpresa, CodigoLocal) {
+
+        //criando o objeto casa atraves da Factory - "desc" Desconto Minimo
+        var casa = new Casa("desc");
+
+        if ($scope.descMinBloqueadoF) {
+
+            casa.CodigoEmpresa = CodigoEmpresa;
+            casa.CodigoLocal = CodigoLocal;
+            casa.Bloqueado = "V";
+            casa.ValorMin = "51.00";
+
+            monitorService.BloquearDescMin(casa);
+
+            toastr["success"]("Desconto Mínimo Bloqueado com sucesso!", "DESCONTO MÍNIMO - UBERLANDIA");
+
+        } else if (!$scope.descMinBloqueadoF) {
 
             casa.CodigoEmpresa = CodigoEmpresa;
             casa.CodigoLocal = CodigoLocal;
@@ -1737,25 +1881,59 @@ app.controller('uberCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
 
                     $scope.NomeEmpresa = item.NomeEmpresa;
 
-                    if (item.VendaAbaixoCusto == "V") {
+                    if (item.VendaAbaixoCusto == "V") {                       
 
-                        $scope.custoBloqueado = true;
+                        if (item.Local == "0") {
+
+                            $scope.custoBloqueado = true;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.custoBloqueadoF = true;
+
+                        }
 
                     } else {
 
-                        $scope.custoBloqueado = false;
+                        if (item.Local == "0") {
 
+                            $scope.custoBloqueado = false;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.custoBloqueadoF = false;
+
+                        }
                     }
 
                     if (item.DescontoMinimo == "V") {
 
-                        $scope.descMinBloqueado = true;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                        if (item.Local == "0") {
+
+                            $scope.descMinBloqueado = true;
+                            $scope.valorDescMin = item.ValorDescMinimo;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.descMinBloqueadoF = true;
+                            $scope.valorDescMinF = item.ValorDescMinimo;
+
+                        }
+
 
                     } else {
 
-                        $scope.descMinBloqueado = false;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                        if (item.Local == "0") {
+
+                            $scope.descMinBloqueado = false;
+                            $scope.valorDescMin = item.ValorDescMinimo;
+
+                        } else if (item.Local == "2") {
+
+                            $scope.descMinBloqueadoF = false;
+                            $scope.valorDescMinF = item.ValorDescMinimo;
+
+                        }
 
                     }
 

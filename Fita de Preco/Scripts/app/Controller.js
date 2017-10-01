@@ -1982,7 +1982,7 @@ app.controller('valadaresCtrl', ['$scope', 'monitorService', 'Casa', '$interval'
     $scope.descMinBloqueado = true;
     $scope.planoBloqueado = true;
     $scope.valorDescMin = "R$51,00";
-    $scope.NomeEmpresa = "";
+    //$scope.NomeEmpresa = "";
 
     /*
      *Bloqueando as vendas abaixo de custo
@@ -2011,6 +2011,7 @@ app.controller('valadaresCtrl', ['$scope', 'monitorService', 'Casa', '$interval'
             monitorService.BloquearCusto(casa);
 
             toastr["warning"]("Custo Desbloqueado com sucesso!", "CUSTO - VALADARES");
+
         } else {
 
             toastr["error"]("Erro ao tentar bloquear ou desbloquear o Custo!", "DTI - Grupo VDL");
@@ -2101,29 +2102,27 @@ app.controller('valadaresCtrl', ['$scope', 'monitorService', 'Casa', '$interval'
 
             $.each(casas, function (i, item) {
 
-                if (item.CodEmpresa == "260") {
-
-                    $scope.NomeEmpresa = item.NomeEmpresa;
-
+                if (item.CodEmpresa == "260" && item.Local == "0") {
+                    
                     if (item.VendaAbaixoCusto == "V") {
 
-                        $scope.custoBloqueado = true;
+                        $scope.custoBloqueado = true;                   
 
-                    } else {
+                    } else {                   
 
-                        $scope.custoBloqueado = false;
+                            $scope.custoBloqueado = false;
 
                     }
 
                     if (item.DescontoMinimo == "V") {
 
-                        $scope.descMinBloqueado = true;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                            $scope.descMinBloqueado = true;
+                            $scope.valorDescMin = item.ValorDescMinimo;                      
 
                     } else {
 
-                        $scope.descMinBloqueado = false;
-                        $scope.valorDescMin = item.ValorDescMinimo;
+                            $scope.descMinBloqueado = false;
+                            $scope.valorDescMin = item.ValorDescMinimo;                      
 
                     }
 
@@ -2158,7 +2157,6 @@ app.controller('valadaresCtrl', ['$scope', 'monitorService', 'Casa', '$interval'
         }, 3000);
 
     };
-
 
 }]);
 
@@ -2291,9 +2289,9 @@ app.controller('mocCtrl', ['$scope', 'monitorService', 'Casa', '$interval', func
 
             $.each(casas, function (i, item) {
 
-                if (item.CodEmpresa == "3140") {
+                if (item.CodEmpresa == "3140" && item.Local == "0") {
 
-                    $scope.NomeEmpresa = item.NomeEmpresa;
+                    //$scope.NomeEmpresa = item.NomeEmpresa;
 
                     if (item.VendaAbaixoCusto == "V") {
 

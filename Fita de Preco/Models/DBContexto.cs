@@ -185,31 +185,67 @@ namespace Fita_de_Preco.Models
 
         public void BloquearPlanos(Planos plano)
         {
-            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
+            if (plano.CodigoEmpresa == 3140 || plano.CodigoEmpresa == 3610)
+            {            
 
-            if (getString != null)
-            {
-                using (SqlConnection con = new SqlConnection(getString.ConnectionString))
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
+
+                if (getString != null)
                 {
-                    try
+                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
                     {
-                        SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@CodigoEmpresa", plano.CodigoEmpresa);
-                        cmd.Parameters.AddWithValue("@CodigoPlano", plano.CodigoPlano);
-                        cmd.Parameters.AddWithValue("@PlanoBloqueado", plano.PlanoBloqueado);
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@CodigoEmpresa", plano.CodigoEmpresa);
+                            cmd.Parameters.AddWithValue("@CodigoPlano", plano.CodigoPlano);
+                            cmd.Parameters.AddWithValue("@PlanoBloqueado", plano.PlanoBloqueado);
 
-                        con.Open();
+                            con.Open();
 
-                        cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            string msg = e.Message;
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
                     }
-                    catch (Exception e)
+                }
+
+            }
+            else
+            {
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
+
+                if (getString != null)
+                {
+                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
                     {
-                        string msg = e.Message;
-                    }
-                    finally
-                    {
-                        con.Close();
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@CodigoEmpresa", plano.CodigoEmpresa);
+                            cmd.Parameters.AddWithValue("@CodigoPlano", plano.CodigoPlano);
+                            cmd.Parameters.AddWithValue("@PlanoBloqueado", plano.PlanoBloqueado);
+
+                            con.Open();
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            string msg = e.Message;
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
                     }
                 }
             }
@@ -217,31 +253,66 @@ namespace Fita_de_Preco.Models
 
         public void BloquearAbaixoCusto(Custo custo)
         {
-            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
+            if (custo.CodigoEmpresa == 3140 || custo.CodigoEmpresa == 3610)
+            {      
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
 
-            if (getString != null)
-            {
-                using (SqlConnection con = new SqlConnection(getString.ConnectionString))
+                if (getString != null)
                 {
-                    try
+                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
                     {
-                        SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@CodigoEmpresa", custo.CodigoEmpresa);
-                        cmd.Parameters.AddWithValue("@CodigoLocal", custo.CodigoLocal);
-                        cmd.Parameters.AddWithValue("@Bloqueado", custo.Bloqueado);
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@CodigoEmpresa", custo.CodigoEmpresa);
+                            cmd.Parameters.AddWithValue("@CodigoLocal", custo.CodigoLocal);
+                            cmd.Parameters.AddWithValue("@Bloqueado", custo.Bloqueado);
 
-                        con.Open();
+                            con.Open();
 
-                        cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            string msg = e.Message;
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
                     }
-                    catch (Exception e)
+                }
+
+            }
+            else
+            {
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
+
+                if (getString != null)
+                {
+                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
                     {
-                        string msg = e.Message;
-                    }
-                    finally
-                    {
-                        con.Close();
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@CodigoEmpresa", custo.CodigoEmpresa);
+                            cmd.Parameters.AddWithValue("@CodigoLocal", custo.CodigoLocal);
+                            cmd.Parameters.AddWithValue("@Bloqueado", custo.Bloqueado);
+
+                            con.Open();
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            string msg = e.Message;
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
                     }
                 }
             }
@@ -258,32 +329,67 @@ namespace Fita_de_Preco.Models
              * @ValorMin char(5)
              */
 
-            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
+            if (desc.CodigoEmpresa == 3140 || desc.CodigoEmpresa == 3610)
+            {            
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
 
-            if (getString != null)
-            {
-                using (SqlConnection con = new SqlConnection(getString.ConnectionString))
+                if (getString != null)
                 {
-                    try
+                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
                     {
-                        SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@CodigoEmpresa", desc.CodigoEmpresa);
-                        cmd.Parameters.AddWithValue("@CodigoLocal", desc.CodigoLocal);
-                        cmd.Parameters.AddWithValue("@Bloqueado", desc.Bloqueado);
-                        cmd.Parameters.AddWithValue("@ValorMin", desc.ValorMin);
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@CodigoEmpresa", desc.CodigoEmpresa);
+                            cmd.Parameters.AddWithValue("@CodigoLocal", desc.CodigoLocal);
+                            cmd.Parameters.AddWithValue("@Bloqueado", desc.Bloqueado);
+                            cmd.Parameters.AddWithValue("@ValorMin", desc.ValorMin);
 
-                        con.Open();
+                            con.Open();
 
-                        cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            string msg = e.Message;
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
                     }
-                    catch (Exception e)
+                }
+            }
+            else
+            {
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
+
+                if (getString != null)
+                {
+                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
                     {
-                        string msg = e.Message;
-                    }
-                    finally
-                    {
-                        con.Close();
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@CodigoEmpresa", desc.CodigoEmpresa);
+                            cmd.Parameters.AddWithValue("@CodigoLocal", desc.CodigoLocal);
+                            cmd.Parameters.AddWithValue("@Bloqueado", desc.Bloqueado);
+                            cmd.Parameters.AddWithValue("@ValorMin", desc.ValorMin);
+
+                            con.Open();
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            string msg = e.Message;
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
                     }
                 }
             }

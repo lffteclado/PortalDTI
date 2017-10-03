@@ -55,10 +55,10 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">Vendas Abaixo do Custo: &nbsp;<input type="checkbox" ng-change="bloquearCusto(3610,0)" id="abaixoCustoRed" class="checkbox-inline" ng-model="custoBloqueado" disabled /></li>
-                        <li class="list-group-item">Desconto Mínimo: &nbsp;<input type="checkbox" ng-change="bloquearDescMin(3610,0)" id="descontoMinRed" ng-model="descMinBloqueado" disabled /></li>
+                        <li class="list-group-item">Vendas Abaixo do Custo: &nbsp;<input type="checkbox" ng-change="bloquearCusto(3610,0)" id="abaixoCustoRed" class="checkbox-inline" ng-model="custoBloqueado" /></li>
+                        <li class="list-group-item">Desconto Mínimo: &nbsp;<input type="checkbox" ng-change="bloquearDescMin(3610,0)" id="descontoMinRed" ng-model="descMinBloqueado" /></li>
                         <li class="list-group-item">Valor do Desconto Mínimo:&nbsp;<label id="valorDescMinRed">{{valorDescMin}}</label></li>
-                        <li class="list-group-item">Venda Atípica:&nbsp;<input type="checkbox" ng-change="bloquearPlano(3610, 526)" id="planoPagamentoRed" ng-model="planoBloqueado" disabled /></li>
+                        <li class="list-group-item">Venda Atípica:&nbsp;<input type="checkbox" ng-change="bloquearPlano(3610, 526)" id="planoPagamentoRed" ng-model="planoBloqueado" /></li>
                     </ul>
                 </div>
             </div>
@@ -211,11 +211,11 @@
                     <table class="table-hover">
                         <tr class="list-group-item">
                             <td>Vendas Abaixo do custo:</td>
-                            <td>&nbsp;<input type="checkbox" ng-change="bloquearCusto(3140,0)" id="abaixoCustoMoc" class="checkbox-inline" ng-model="custoBloqueado" disabled /></td>
+                            <td>&nbsp;<input type="checkbox" ng-change="bloquearCusto(3140,0)" id="abaixoCustoMoc" class="checkbox-inline" ng-model="custoBloqueado" /></td>
                         </tr>
                         <tr class="list-group-item">
                             <td>Desconto Mínimo:</td>
-                            <td>&nbsp;<input type="checkbox" ng-change="bloquearDescMin(3140,0)" id="descontoMinMoc" ng-model="descMinBloqueado" disabled /></td>
+                            <td>&nbsp;<input type="checkbox" ng-change="bloquearDescMin(3140,0)" id="descontoMinMoc" ng-model="descMinBloqueado" /></td>
                         </tr>
                         <tr class="list-group-item">
                             <td>Valor do Desconto Mínimo:&nbsp;&nbsp;&nbsp;</td>
@@ -223,7 +223,7 @@
                         </tr>
                         <tr class="list-group-item">
                             <td>Venda Atípica:</td>
-                            <td>&nbsp;<input type="checkbox" ng-change="bloquearPlano(3140, 526)" id="planoPagamentoMoc" ng-model="planoBloqueado" disabled /></td>
+                            <td>&nbsp;<input type="checkbox" ng-change="bloquearPlano(3140, 526)" id="planoPagamentoMoc" ng-model="planoBloqueado" /></td>
                         </tr>
                     </table>
 

@@ -713,9 +713,9 @@ app.controller('redeCtrl', ['$scope', 'monitorService', 'Casa', '$interval', fun
 
             $.each(casas, function (i, item) {
 
-                if (item.CodEmpresa == "930") {
+                if (item.CodEmpresa == "3610" && item.Local == "0") {
 
-                    $scope.NomeEmpresa = item.NomeEmpresa;
+                    //$scope.NomeEmpresa = item.NomeEmpresa;
 
                     if (item.VendaAbaixoCusto == "V") {
 

@@ -1,0 +1,1066 @@
+﻿@model IEnumerable<Fita_de_Preco.Models.StatusPlanos>
+
+@{
+    Layout = "~/Views/Shared/_LayoutMonitor.cshtml";
+}
+
+@{
+    ViewBag.Title = "Monitor";
+
+    #region Atributos Casas
+
+    //Atributos da Cardiesel
+    string CardieselNome = string.Empty;
+    string CardAbaixoCusto = string.Empty;
+    string CardDesc51 = string.Empty;
+    string CardVendaAtipica = string.Empty;
+    string CardValorDescMin = string.Empty;
+
+    string CardStatusAbaixoCusto = "VERIFICAR!";
+    string CardAlertaAbaixoCusto = "label label-danger";
+
+    string CardStatusDesc51 = "VERIFICAR!";
+    string CardAlertaDesc51 = "label label-danger";
+
+    string CardStatusVendaAtipica = "VERIFICAR!";
+    string CardAlertaVendaAtipica = "label label-danger";
+
+    string CardAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Auto Sete Martriz
+    string AutoNome = string.Empty;
+    string AutoAbaixoCusto = string.Empty;
+    string AutoDesc51 = string.Empty;
+    string AutoVendaAtipica = string.Empty;
+    string AutoValorDescMin = string.Empty;
+
+    string AutoStatusAbaixoCusto = "MATRIZ";
+    string AutoAlertaAbaixoCusto = "label label-danger";
+    string AutoStatusDesc51 = "MATRIZ";
+    string AutoAlertaDesc51 = "label label-danger";
+    string AutoStatusVendaAtipica = "VERIFICAR!";
+    string AutoAlertaVendaAtipica = "label label-danger";
+    string AutoAlertaValorDescMin = "label label-danger";
+
+    //AutoSete Filial
+
+    string AutoFAbaixoCusto = string.Empty;
+    string AutoFDesc51 = string.Empty;
+    string AutoFVendaAtipica = string.Empty;
+    string AutoFValorDescMin = string.Empty;
+
+    string AutoFStatusAbaixoCusto = "FILIAL";
+    string AutoFAlertaAbaixoCusto = "label label-danger";
+    string AutoFStatusDesc51 = "FILIAL";
+    string AutoFAlertaDesc51 = "label label-danger";
+    string AutoFAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Calisto
+    string CalNome = string.Empty;
+    string CalAbaixoCusto = string.Empty;
+    string CalDesc51 = string.Empty;
+    string CalVendaAtipica = string.Empty;
+    string CalValorDescMin = string.Empty;
+
+    string CalStatusAbaixoCusto = "VERIFICAR!";
+    string CalAlertaAbaixoCusto = "label label-danger";
+
+    string CalStatusDesc51 = "VERIFICAR!";
+    string CalAlertaDesc51 = "label label-danger";
+
+    string CalStatusVendaAtipica = "VERIFICAR!";
+    string CalAlertaVendaAtipica = "label label-danger";
+
+    string CalAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Goias Matriz
+    string GoNome = string.Empty;
+    string GoAbaixoCusto = string.Empty;
+    string GoDesc51 = string.Empty;
+    string GoVendaAtipica = string.Empty;
+    string GoValorDescMin = string.Empty;
+
+    string GoStatusAbaixoCusto = "MATRIZ";
+    string GoAlertaAbaixoCusto = "label label-danger";
+
+    string GoStatusDesc51 = "MATRIZ";
+    string GoAlertaDesc51 = "label label-danger";
+
+    string GoStatusVendaAtipica = "VERIFICAR!";
+    string GoAlertaVendaAtipica = "label label-danger";
+
+    string GoAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Goias Filial - Barra do Garça
+
+    string GoFAbaixoCusto = string.Empty;
+    string GoFDesc51 = string.Empty;
+    string GoFVendaAtipica = string.Empty;
+    string GoFValorDescMin = string.Empty;
+
+    string GoFStatusAbaixoCusto = "FILIAL";
+    string GoFAlertaAbaixoCusto = "label label-danger";
+    string GoFStatusDesc51 = "FILIAL";
+    string GoFAlertaDesc51 = "label label-danger";
+    string GoFAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Uberlandia
+    string UbNome = string.Empty;
+    string UbAbaixoCusto = string.Empty;
+    string UbDesc51 = string.Empty;
+    string UbVendaAtipica = string.Empty;
+    string UbValorDescMin = string.Empty;
+
+    string UbStatusAbaixoCusto = "MATRIZ";
+    string UbAlertaAbaixoCusto = "label label-danger";
+
+    string UbStatusDesc51 = "VERIFICAR!";
+    string UbAlertaDesc51 = "label label-danger";
+
+    string UbStatusVendaAtipica = "VERIFICAR!";
+    string UbAlertaVendaAtipica = "label label-danger";
+
+    string UbAlertaValorDescMin = "label label-danger";
+
+    //Atributos Itumbiara
+
+    string ItuNome = string.Empty;
+    string ItuAbaixoCusto = string.Empty;
+    string ItuDesc51 = string.Empty;
+    string ItuVendaAtipica = string.Empty;
+    string ItuValorDescMin = string.Empty;
+
+    string ItuStatusAbaixoCusto = "FILIAL";
+    string ItuAlertaAbaixoCusto = "label label-danger";
+
+    string ItuStatusDesc51 = "VERIFICAR!";
+    string ItuAlertaDesc51 = "label label-danger";
+
+    string ItuStatusVendaAtipica = "VERIFICAR!";
+    string ItuAlertaVendaAtipica = "label label-danger";
+
+    string ItuAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Vadiesel
+    string VaNome = string.Empty;
+    string VaAbaixoCusto = string.Empty;
+    string VaDesc51 = string.Empty;
+    string VaVendaAtipica = string.Empty;
+    string VaValorDescMin = string.Empty;
+
+    string VaStatusAbaixoCusto = "VERIFICAR!";
+    string VaAlertaAbaixoCusto = "label label-danger";
+
+    string VaStatusDesc51 = "VERIFICAR!";
+    string VaAlertaDesc51 = "label label-danger";
+
+    string VaStatusVendaAtipica = "VERIFICAR!";
+    string VaAlertaVendaAtipica = "label label-danger";
+
+    string VaAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Valadares
+    string VdNome = string.Empty;
+    string VdAbaixoCusto = string.Empty;
+    string VdDesc51 = string.Empty;
+    string VdVendaAtipica = string.Empty;
+    string VdValorDescMin = string.Empty;
+
+    string VdStatusAbaixoCusto = "VERIFICAR!";
+    string VdAlertaAbaixoCusto = "label label-danger";
+
+    string VdStatusDesc51 = "VERIFICAR!";
+    string VdAlertaDesc51 = "label label-danger";
+
+    string VdStatusVendaAtipica = "VERIFICAR!";
+    string VdAlertaVendaAtipica = "label label-danger";
+
+    string VdAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Rede Mineira
+    string RdNome = string.Empty;
+    string RdAbaixoCusto = string.Empty;
+    string RdDesc51 = string.Empty;
+    string RdVendaAtipica = string.Empty;
+    string RdValorDescMin = string.Empty;
+
+    string RdStatusAbaixoCusto = "VERIFICAR!";
+    string RdAlertaAbaixoCusto = "label label-danger";
+
+    string RdStatusDesc51 = "VERIFICAR!";
+    string RdAlertaDesc51 = "label label-danger";
+
+    string RdStatusVendaAtipica = "VERIFICAR!";
+    string RdAlertaVendaAtipica = "label label-danger";
+
+    string RdAlertaValorDescMin = "label label-danger";
+
+    //Atributos da Posto Imperial
+    string PiNome = string.Empty;
+    string PiAbaixoCusto = string.Empty;
+    string PiDesc51 = string.Empty;
+    string PiVendaAtipica = string.Empty;
+    string PiValorDescMin = string.Empty;
+
+    string PiStatusAbaixoCusto = "MATRIZ";
+    string PiAlertaAbaixoCusto = "label label-danger";
+
+    string PiStatusDesc51 = "MATRIZ";
+    string PiAlertaDesc51 = "label label-danger";
+
+    string PiStatusVendaAtipica = "VERIFICAR!";
+    string PiAlertaVendaAtipica = "label label-danger";
+
+    string PiAlertaValorDescMin = "label label-danger";
+
+    //Posto Imperial Filial
+
+    string PiFAbaixoCusto = string.Empty;
+    string PiFDesc51 = string.Empty;
+    string PiFVendaAtipica = string.Empty;
+    string PiFValorDescMin = string.Empty;
+
+    string PiFStatusAbaixoCusto = "FILIAL";
+    string PiFAlertaAbaixoCusto = "label label-danger";
+    string PiFStatusDesc51 = "FILIAL";
+    string PiFAlertaDesc51 = "label label-danger";
+    string PiFAlertaValorDescMin = "label label-danger";
+
+    //Atributos Montes Claros
+    string MOCNome = string.Empty;
+    string MOCAbaixoCusto = string.Empty;
+    string MOCDesc51 = string.Empty;
+    string MOCVendaAtipica = string.Empty;
+    string MOCValorDescMin = string.Empty;
+
+    string MOCStatusAbaixoCusto = "MATRIZ";
+    string MOCAlertaAbaixoCusto = "label label-danger";
+
+    string MOCStatusDesc51 = "MATRIZ";
+    string MOCAlertaDesc51 = "label label-danger";
+
+    string MOCStatusVendaAtipica = "VERIFICAR!";
+    string MOCAlertaVendaAtipica = "label label-danger";
+
+    string MOCAlertaValorDescMin = "label label-danger";
+
+    //Montes Claros Filial Janauba
+
+    string MOCJAbaixoCusto = string.Empty;
+    string MOCJDesc51 = string.Empty;
+    string MOCJVendaAtipica = string.Empty;
+    string MOCJValorDescMin = string.Empty;
+
+    string MOCJStatusAbaixoCusto = "JANAUBA";
+    string MOCJAlertaAbaixoCusto = "label label-danger";
+    string MOCJStatusDesc51 = "JANAUBA";
+    string MOCJAlertaDesc51 = "label label-danger";
+    string MOCJAlertaValorDescMin = "label label-danger";
+
+    //Montes Claros Filial Bosch
+
+    string MOCBAbaixoCusto = string.Empty;
+    string MOCBDesc51 = string.Empty;
+    string MOCBVendaAtipica = string.Empty;
+    string MOCBValorDescMin = string.Empty;
+
+    string MOCBStatusAbaixoCusto = "BOSCH";
+    string MOCBAlertaAbaixoCusto = "label label-danger";
+    string MOCBStatusDesc51 = "BOSCH";
+    string MOCBAlertaDesc51 = "label label-danger";
+    string MOCBAlertaValorDescMin = "label label-danger";
+
+
+    foreach (var casa in Model)
+    {
+        //AutoSete Matriz
+
+        if (casa.CodEmpresa == "1200" && casa.Local == "0")
+        {
+            AutoNome = "AUTOSETE"; //casa.NomeEmpresa;
+            AutoAbaixoCusto = casa.VendaAbaixoCusto;
+            AutoVendaAtipica = casa.PlanoBloqueio;
+            AutoDesc51 = casa.DescontoMinimo;
+            AutoValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //AutoSete Filial
+
+        if (casa.CodEmpresa == "1200" && casa.Local == "2")
+        {
+            AutoFAbaixoCusto = casa.VendaAbaixoCusto;
+            AutoFDesc51 = casa.DescontoMinimo;
+            AutoFValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Cardiesel Matriz
+
+        if (casa.CodEmpresa == "930" && casa.Local == "0")
+        {
+            CardieselNome = "CARDIESEL"; //casa.NomeEmpresa;
+            CardAbaixoCusto = casa.VendaAbaixoCusto;
+            CardVendaAtipica = casa.PlanoBloqueio;
+            CardDesc51 = casa.DescontoMinimo;
+            CardValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Calisto Matriz
+
+        if (casa.CodEmpresa == "262" && casa.Local == "0")
+        {
+            CalNome = "CALISTO"; //casa.NomeEmpresa;
+            CalAbaixoCusto = casa.VendaAbaixoCusto;
+            CalVendaAtipica = casa.PlanoBloqueio;
+            CalDesc51 = casa.DescontoMinimo;
+            CalValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Goias Matriz
+
+        if (casa.CodEmpresa == "2630" && casa.Local == "0")
+        {
+            GoNome = "GOIAS"; //casa.NomeEmpresa;
+            GoAbaixoCusto = casa.VendaAbaixoCusto;
+            GoVendaAtipica = casa.PlanoBloqueio;
+            GoDesc51 = casa.DescontoMinimo;
+            GoValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Goias Filial
+
+        if (casa.CodEmpresa == "2630" && casa.Local == "1")
+        {
+            GoFAbaixoCusto = casa.VendaAbaixoCusto;
+            GoFDesc51 = casa.DescontoMinimo;
+            GoFValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Uberlandia Matriz
+
+        if (casa.CodEmpresa == "2620" && casa.Local == "0")
+        {
+            UbNome = "UBERLANDIA"; //casa.NomeEmpresa;
+            UbAbaixoCusto = casa.VendaAbaixoCusto;
+            UbVendaAtipica = casa.PlanoBloqueio;
+            UbDesc51 = casa.DescontoMinimo;
+            UbValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Itumbiara
+
+        if (casa.CodEmpresa == "2620" && casa.Local == "2")
+        {
+            ItuAbaixoCusto = casa.VendaAbaixoCusto;
+            ItuDesc51 = casa.DescontoMinimo;
+            ItuValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Vadiesel Matriz
+
+        if (casa.CodEmpresa == "130" && casa.Local == "0")
+        {
+            VaNome = "VADIESEL"; //casa.NomeEmpresa;
+            VaAbaixoCusto = casa.VendaAbaixoCusto;
+            VaVendaAtipica = casa.PlanoBloqueio;
+            VaDesc51 = casa.DescontoMinimo;
+            VaValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Valadares Matriz
+
+        if (casa.CodEmpresa == "260" && casa.Local == "0")
+        {
+            VdNome = "VALADARES"; //casa.NomeEmpresa;
+            VdAbaixoCusto = casa.VendaAbaixoCusto;
+            VdVendaAtipica = casa.PlanoBloqueio;
+            VdDesc51 = casa.DescontoMinimo;
+            VdValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Rede Mineira Matriz
+
+        if (casa.CodEmpresa == "3610" && casa.Local == "0")
+        {
+            RdNome = "REDE MINEIRA"; //casa.NomeEmpresa;
+            RdAbaixoCusto = casa.VendaAbaixoCusto;
+            RdVendaAtipica = casa.PlanoBloqueio;
+            RdDesc51 = casa.DescontoMinimo;
+            RdValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Posto Imeprial Matriz
+
+        if (casa.CodEmpresa == "2890" && casa.Local == "0")
+        {
+            PiNome = "POSTO IMPERIAL"; //casa.NomeEmpresa;
+            PiAbaixoCusto = casa.VendaAbaixoCusto;
+            PiVendaAtipica = casa.PlanoBloqueio;
+            PiDesc51 = casa.DescontoMinimo;
+            PiValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Posto Imperial Filial
+
+        if (casa.CodEmpresa == "2890" && casa.Local == "1")
+        {
+            PiFAbaixoCusto = casa.VendaAbaixoCusto;
+            PiFDesc51 = casa.DescontoMinimo;
+            PiFValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Montes Claros Matriz
+
+        if (casa.CodEmpresa == "3140" && casa.Local == "0")
+        {
+            MOCNome = "MONTES CLAROS"; //casa.NomeEmpresa;
+            MOCAbaixoCusto = casa.VendaAbaixoCusto;
+            MOCVendaAtipica = casa.PlanoBloqueio;
+            MOCDesc51 = casa.DescontoMinimo;
+            MOCValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Montes Claros Janauba
+
+        if (casa.CodEmpresa == "3140" && casa.Local == "1")
+        {
+            MOCJAbaixoCusto = casa.VendaAbaixoCusto;
+            MOCJDesc51 = casa.DescontoMinimo;
+            MOCJValorDescMin = casa.ValorDescMinimo;
+        }
+
+        //Montes Claros Bosch
+
+        if (casa.CodEmpresa == "3140" && casa.Local == "2")
+        {
+            MOCBAbaixoCusto = casa.VendaAbaixoCusto;
+            MOCBDesc51 = casa.DescontoMinimo;
+            MOCBValorDescMin = casa.ValorDescMinimo;
+        }
+
+    }
+
+    // Cardiesel
+
+    if (CardAbaixoCusto == "V")
+    {
+        CardStatusAbaixoCusto = "BLOQUEADO!";
+        CardAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (CardVendaAtipica == "V")
+    {
+        CardStatusVendaAtipica = "BLOQUEADO!";
+        CardAlertaVendaAtipica = "label label-success";
+    }
+
+    if (CardDesc51 == "V")
+    {
+        CardStatusDesc51 = "BLOQUEADO!";
+        CardAlertaDesc51 = "label label-success";
+
+    }
+
+    if (CardValorDescMin == "R$51,00")
+    {
+        CardAlertaValorDescMin = "label label-success";
+    }
+
+    //AutoSete Matriz
+
+    if (AutoAbaixoCusto == "V")
+    {
+        AutoStatusAbaixoCusto = "BLOQUEADO!";
+        AutoAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (AutoVendaAtipica == "V")
+    {
+        AutoStatusVendaAtipica = "BLOQUEADO!";
+        AutoAlertaVendaAtipica = "label label-success";
+    }
+
+    if (AutoDesc51 == "V")
+    {
+        AutoStatusDesc51 = "BLOQUEADO!";
+        AutoAlertaDesc51 = "label label-success";
+
+    }
+
+    if (AutoValorDescMin == "R$51,00")
+    {
+        AutoAlertaValorDescMin = "label label-success";
+    }
+
+    //Auto Sete Filial
+
+    if (AutoFAbaixoCusto == "V")
+    {
+        AutoFStatusAbaixoCusto = "BLOQUEADO!";
+        AutoFAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (AutoFDesc51 == "V")
+    {
+        AutoFStatusDesc51 = "BLOQUEADO!";
+        AutoFAlertaDesc51 = "label label-success";
+
+    }
+
+    if (AutoFValorDescMin == "R$51,00")
+    {
+        AutoFAlertaValorDescMin = "label label-success";
+    }
+
+    //Calisto
+
+    if (CalAbaixoCusto == "V")
+    {
+        CalStatusAbaixoCusto = "BLOQUEADO!";
+        CalAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (CalVendaAtipica == "V")
+    {
+        CalStatusVendaAtipica = "BLOQUEADO!";
+        CalAlertaVendaAtipica = "label label-success";
+    }
+
+    if (CalDesc51 == "V")
+    {
+        CalStatusDesc51 = "BLOQUEADO!";
+        CalAlertaDesc51 = "label label-success";
+
+    }
+
+    if (CalValorDescMin == "R$51,00")
+    {
+        CalAlertaValorDescMin = "label label-success";
+    }
+
+    //Goias Matriz
+
+    if (GoAbaixoCusto == "V")
+    {
+        GoStatusAbaixoCusto = "BLOQUEADO!";
+        GoAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (GoVendaAtipica == "V")
+    {
+        GoStatusVendaAtipica = "BLOQUEADO!";
+        GoAlertaVendaAtipica = "label label-success";
+    }
+
+    if (GoDesc51 == "V")
+    {
+        GoStatusDesc51 = "BLOQUEADO!";
+        GoAlertaDesc51 = "label label-success";
+
+    }
+
+    if (GoValorDescMin == "R$51,00")
+    {
+        GoAlertaValorDescMin = "label label-success";
+    }
+
+    //Goias Filial
+
+    if (GoFAbaixoCusto == "V")
+    {
+        GoFStatusAbaixoCusto = "BLOQUEADO!";
+        GoFAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (GoFDesc51 == "V")
+    {
+        GoFStatusDesc51 = "BLOQUEADO!";
+        GoFAlertaDesc51 = "label label-success";
+
+    }
+
+    if (GoFValorDescMin == "R$51,00")
+    {
+        GoFAlertaValorDescMin = "label label-success";
+    }
+
+    //Uberlandia
+
+    if (UbAbaixoCusto == "V")
+    {
+        UbStatusAbaixoCusto = "BLOQUEADO!";
+        UbAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (UbVendaAtipica == "V")
+    {
+        UbStatusVendaAtipica = "BLOQUEADO!";
+        UbAlertaVendaAtipica = "label label-success";
+    }
+
+    if (UbDesc51 == "V")
+    {
+        UbStatusDesc51 = "BLOQUEADO!";
+        UbAlertaDesc51 = "label label-success";
+
+    }
+
+    if (UbValorDescMin == "R$51,00")
+    {
+        UbAlertaValorDescMin = "label label-success";
+    }
+
+    //Itumbiara
+
+    if (ItuAbaixoCusto == "V")
+    {
+        ItuStatusAbaixoCusto = "BLOQUEADO!";
+        ItuAlertaAbaixoCusto = "label label-success";
+
+    }
+
+
+    if (ItuDesc51 == "V")
+    {
+        ItuStatusDesc51 = "BLOQUEADO!";
+        ItuAlertaDesc51 = "label label-success";
+
+    }
+
+    if (ItuValorDescMin == "R$51,00")
+    {
+        ItuAlertaValorDescMin = "label label-success";
+    }
+
+    //Posto Imperial Matriz
+
+    if (PiAbaixoCusto == "V")
+    {
+        PiStatusAbaixoCusto = "BLOQUEADO!";
+        PiAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (PiVendaAtipica == "V")
+    {
+        PiStatusVendaAtipica = "BLOQUEADO!";
+        PiAlertaVendaAtipica = "label label-success";
+    }
+
+    if (PiDesc51 == "V")
+    {
+        PiStatusDesc51 = "BLOQUEADO!";
+        PiAlertaDesc51 = "label label-success";
+
+    }
+
+    if (PiValorDescMin == "R$51,00")
+    {
+        PiAlertaValorDescMin = "label label-success";
+    }
+
+    //Posto Imperial Filial
+
+    if (PiFAbaixoCusto == "V")
+    {
+        PiFStatusAbaixoCusto = "BLOQUEADO!";
+        PiFAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (PiFDesc51 == "V")
+    {
+        PiFStatusDesc51 = "BLOQUEADO!";
+        PiFAlertaDesc51 = "label label-success";
+
+    }
+
+    if (PiFValorDescMin == "R$51,00")
+    {
+        PiFAlertaValorDescMin = "label label-success";
+    }
+
+    //Vadiesel
+
+    if (VaAbaixoCusto == "V")
+    {
+        VaStatusAbaixoCusto = "BLOQUEADO!";
+        VaAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (VaVendaAtipica == "V")
+    {
+        VaStatusVendaAtipica = "BLOQUEADO!";
+        VaAlertaVendaAtipica = "label label-success";
+    }
+
+    if (VaDesc51 == "V")
+    {
+        VaStatusDesc51 = "BLOQUEADO!";
+        VaAlertaDesc51 = "label label-success";
+
+    }
+
+    if (VaValorDescMin == "R$51,00")
+    {
+        VaAlertaValorDescMin = "label label-success";
+    }
+
+    //Rede Mineira
+
+    if (RdAbaixoCusto == "V")
+    {
+        RdStatusAbaixoCusto = "BLOQUEADO!";
+        RdAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (RdVendaAtipica == "V")
+    {
+        RdStatusVendaAtipica = "BLOQUEADO!";
+        RdAlertaVendaAtipica = "label label-success";
+    }
+
+    if (RdDesc51 == "V")
+    {
+        RdStatusDesc51 = "BLOQUEADO!";
+        RdAlertaDesc51 = "label label-success";
+
+    }
+
+    if (RdValorDescMin == "R$51,00")
+    {
+        RdAlertaValorDescMin = "label label-success";
+    }
+
+    //Valadares
+
+    if (VdAbaixoCusto == "V")
+    {
+        VdStatusAbaixoCusto = "BLOQUEADO!";
+        VdAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (VdVendaAtipica == "V")
+    {
+        VdStatusVendaAtipica = "BLOQUEADO!";
+        VdAlertaVendaAtipica = "label label-success";
+    }
+
+    if (VdDesc51 == "V")
+    {
+        VdStatusDesc51 = "BLOQUEADO!";
+        VdAlertaDesc51 = "label label-success";
+
+    }
+
+    if (VdValorDescMin == "R$51,00")
+    {
+        VdAlertaValorDescMin = "label label-success";
+    }
+
+    //Montes Claros
+
+    if (MOCAbaixoCusto == "V")
+    {
+        MOCStatusAbaixoCusto = "BLOQUEADO!";
+        MOCAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (MOCVendaAtipica == "V")
+    {
+        MOCStatusVendaAtipica = "BLOQUEADO!";
+        MOCAlertaVendaAtipica = "label label-success";
+    }
+
+    if (MOCDesc51 == "V")
+    {
+        MOCStatusDesc51 = "BLOQUEADO!";
+        MOCAlertaDesc51 = "label label-success";
+
+    }
+
+    if (MOCValorDescMin == "R$51,00")
+    {
+        MOCAlertaValorDescMin = "label label-success";
+    }
+
+    //Montes Claros Janauba
+
+    if (MOCJAbaixoCusto == "V")
+    {
+        MOCJStatusAbaixoCusto = "BLOQUEADO!";
+        MOCJAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (MOCJDesc51 == "V")
+    {
+        MOCJStatusDesc51 = "BLOQUEADO!";
+        MOCJAlertaDesc51 = "label label-success";
+
+    }
+
+    if (MOCJValorDescMin == "R$51,00")
+    {
+        MOCJAlertaValorDescMin = "label label-success";
+    }
+
+    //Montes Claros Bosch
+
+    if (MOCBAbaixoCusto == "V")
+    {
+        MOCBStatusAbaixoCusto = "BLOQUEADO!";
+        MOCBAlertaAbaixoCusto = "label label-success";
+
+    }
+
+    if (MOCBDesc51 == "V")
+    {
+        MOCBStatusDesc51 = "BLOQUEADO!";
+        MOCBAlertaDesc51 = "label label-success";
+
+    }
+
+    if (MOCBValorDescMin == "R$51,00")
+    {
+        MOCBAlertaValorDescMin = "label label-success";
+    }
+
+
+    #endregion Atributos Casas
+
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@VaNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: <span class="@VaAlertaAbaixoCusto">@VaStatusAbaixoCusto</span></li>
+                    <li class="list-group-item">Desconto < R$ 51: <span class="@VaAlertaDesc51">@VaStatusDesc51</span></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <span class="@VaAlertaValorDescMin">@VaValorDescMin</span></li>
+                    <li class="list-group-item">Venda Atípica: <span class="@VaAlertaVendaAtipica">@VaStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@CalNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: <span class="@CalAlertaAbaixoCusto">@CalStatusAbaixoCusto</span></li>
+                    <li class="list-group-item">Desconto < R$ 51: <span class="@CalAlertaDesc51">@CalStatusDesc51</span></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <span class="@CalAlertaValorDescMin">@CalValorDescMin</span></li>
+                    <li class="list-group-item">Venda Atípica: <span class="@CalAlertaVendaAtipica">@CalStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@CardieselNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: <span class="@CardAlertaAbaixoCusto">@CardStatusAbaixoCusto</span></li>
+                    <li class="list-group-item">Desconto < R$ 51: <span class="@CardAlertaDesc51">@CardStatusDesc51</span></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <span class="@CardAlertaValorDescMin">@CardValorDescMin</span></li>
+                    <li class="list-group-item">Venda Atípica: <span class="@CardAlertaVendaAtipica">@CardStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@RdNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: <span class="@RdAlertaAbaixoCusto">@RdStatusAbaixoCusto</span></li>
+                    <li class="list-group-item">Desconto < R$ 51: <span class="@RdAlertaDesc51">@RdStatusDesc51</span></li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <span class="@RdAlertaValorDescMin">@RdValorDescMin</span></li>
+                    <li class="list-group-item">Venda Atípica: <span class="@RdAlertaVendaAtipica">@RdStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@PiNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class="@PiAlertaAbaixoCusto">@PiStatusAbaixoCusto</span>
+                        <span class="@PiFAlertaAbaixoCusto">@PiFStatusAbaixoCusto</span>
+                    </li>
+                    <li class="list-group-item">
+                        Desconto < R$ 51:<br />
+                        <span class="@PiAlertaDesc51">@PiStatusDesc51</span>
+                        <span class="@PiFAlertaDesc51">@PiFStatusDesc51</span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class="@PiAlertaValorDescMin">@PiValorDescMin</span>
+                        <span class="@PiFAlertaValorDescMin">@PiFValorDescMin</span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class="@PiAlertaVendaAtipica">@PiStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@AutoNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class="@AutoAlertaAbaixoCusto">@AutoStatusAbaixoCusto</span>
+                        <span class="@AutoFAlertaAbaixoCusto">@AutoFStatusAbaixoCusto</span>
+                    </li>
+                    <li class="list-group-item">
+                        Desconto < R$ 51:<br />
+                        <span class="@AutoAlertaDesc51">@AutoStatusDesc51</span>
+                        <span class="@AutoFAlertaDesc51">@AutoFStatusDesc51</span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class="@AutoAlertaValorDescMin">@AutoValorDescMin</span>
+                        <span class="@AutoFAlertaValorDescMin">@AutoFValorDescMin</span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class="@AutoAlertaVendaAtipica">@AutoStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@GoNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class="@GoAlertaAbaixoCusto">@GoStatusAbaixoCusto</span>
+                        <span class="@GoFAlertaAbaixoCusto">@GoFStatusAbaixoCusto</span>
+                    </li>
+                    <li class="list-group-item">
+                        Desconto < R$ 51: <br />
+                        <span class="@GoAlertaDesc51">@GoStatusDesc51</span>
+                        <span class="@GoFAlertaDesc51">@GoFStatusDesc51</span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo: <br />
+                        <span class="@GoAlertaValorDescMin">@GoValorDescMin</span>
+                        <span class="@GoFAlertaValorDescMin">@GoFValorDescMin</span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class="@GoAlertaVendaAtipica">@GoStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@UbNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Abaixo do custo: <br />
+                        <span class="@UbAlertaAbaixoCusto">@UbStatusAbaixoCusto</span>
+                        <span class="@ItuAlertaAbaixoCusto">@ItuStatusAbaixoCusto</span>
+                    </li>
+                    <li class="list-group-item">Desconto < R$ 51: <br />
+                        <span class="@UbAlertaDesc51">@UbStatusDesc51</span>
+                        <span class="@ItuAlertaDesc51">@ItuStatusDesc51</span>
+                    </li>
+                    <li class="list-group-item">Valor do Desconto Mínimo: <br />
+                        <span class="@UbAlertaValorDescMin">@UbValorDescMin</span>
+                        <span class="@ItuAlertaValorDescMin">@ItuValorDescMin</span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class="@UbAlertaVendaAtipica">@UbStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@VdNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class="@VdAlertaAbaixoCusto">@VdStatusAbaixoCusto</span>
+                    </li>
+                    <li class="list-group-item">
+                        Desconto < R$ 51:<br />
+                        <span class="@VdAlertaDesc51">@VdStatusDesc51</span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class="@VdAlertaValorDescMin">@VdValorDescMin</span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class="@VdAlertaVendaAtipica">@VdStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@MOCNome</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Abaixo do custo:<br />
+                        <span class="@MOCAlertaAbaixoCusto">@MOCStatusAbaixoCusto</span>
+                        <span class="@MOCJAlertaAbaixoCusto">@MOCJStatusAbaixoCusto</span>
+                        <span class="@MOCBAlertaAbaixoCusto">@MOCBStatusAbaixoCusto</span>
+                    </li>
+                    <li class="list-group-item">
+                        Desconto < R$ 51:<br />
+                        <span class="@MOCAlertaDesc51">@MOCStatusDesc51</span>
+                        <span class="@MOCJAlertaDesc51">@MOCJStatusDesc51</span>
+                        <span class="@MOCBAlertaDesc51">@MOCBStatusDesc51</span>
+                    </li>
+                    <li class="list-group-item">
+                        Valor do Desconto Mínimo:<br />
+                        <span class="@MOCAlertaValorDescMin">@MOCValorDescMin</span>
+                        <span class="@MOCJAlertaValorDescMin">@MOCJValorDescMin</span>
+                        <span class="@MOCBAlertaValorDescMin">@MOCBValorDescMin</span>
+                    </li>
+                    <li class="list-group-item">Venda Atípica: <span class="@MOCAlertaVendaAtipica">@MOCStatusVendaAtipica</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

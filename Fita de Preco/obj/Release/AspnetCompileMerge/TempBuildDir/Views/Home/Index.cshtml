@@ -1,0 +1,59 @@
+﻿@model Fita_de_Preco.Models.UploadFileResult
+@{
+    ViewData["Title"] = "Correção de Arquivo";
+}
+<br />
+<div class="alert alert-info" role="alert">Escolha o tipo de arquivo a ser corrigido:</div>
+<br />
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#nacImp" aria-controls="nacImp" role="tab" data-toggle="tab">Nacional Importado</a></li>
+        <li role="presentation"><a href="#fitaPreco" aria-controls="fitaPreco" role="tab" data-toggle="tab">Fita de Preço</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="nacImp">
+            <div class="alert alert-warning" role="alert">Arquivos: <em>Nacional Importado</em></div>
+            <br />
+            <div class="form-group">
+                <input type="file" class="form-control" id="FileUpload" multiple />
+                <br />
+                <input type="button" class="btn btn-primary" id="Upload" value="Enviar Arquivo" />            
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="fitaPreco">
+            <div class="alert alert-warning" role="alert">Arquivos: <em>Fita de Preço</em></div>
+            <br />
+            <div class="form-group">       
+                @using (Html.BeginForm("FileUpLoad", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input class="btn btn-default" type="file" name="arquivoUpload" />
+                    <br />
+                    <input class="btn btn-success" type="submit" value="Enviar Arquivo" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Corrigir Arquivos
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div id="conteudoModal">
+                    
+                    <a href="@Url.Action("ArquivoNacImp", "NacionalImportado")" class="btn btn-primary">Corrigir Arquivos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

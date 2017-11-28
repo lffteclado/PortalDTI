@@ -1,0 +1,46 @@
+﻿@model IList<Fita_de_Preco.Models.UploadFileResult>
+@{
+    ViewBag.Title = "Download";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Arquivos para Download:</h3>
+<p>
+    @Html.ActionLink("Importar Novo", "Index", "Home")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Nome
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+    @{
+
+        if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDArquivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Download", "Download", new { id = item.IDArquivo, nome = item.Nome })
+                </td>
+                <td>
+                    @Html.ActionLink("Deletar", "Deletar", new { nome = item.Nome })
+                </td>
+            </tr>
+                }
+
+            }
+        }
+</table>

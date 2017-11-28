@@ -1,0 +1,33 @@
+﻿@model IList<Fita_de_Preco.Models.XML>
+@{
+    ViewBag.Title = "XML";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Buscar XML</h2>
+    
+
+    @using (Html.BeginForm("PesquisaXML", "XML", FormMethod.Post))
+    {
+        <div class="form-inline">
+            <div class="form-group">
+                <label for="exampleInputName2">Numero da NF:</label>
+                <br />
+                <input type="number" required id="numeroNF" placeholder="Numero NF" name="numeroNF" maxlength="10">
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <label for="exampleInputEmail2">Casa:</label>
+                <br />
+                @*Passando o Nome da ViewBag*@
+                @Html.DropDownList("NomeConcessionaria")
+            </div>
+            <br />
+            <br />
+            <div>
+                <input class="btn btn-default" type="submit" value="Pesquisar" />
+            </div>
+            <br />
+        </div>
+    }

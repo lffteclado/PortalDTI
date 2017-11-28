@@ -80,6 +80,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.Protocols" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -175,6 +177,7 @@
     <Compile Include="Models\DBContexto.cs" />
     <Compile Include="Models\DescMinino.cs" />
     <Compile Include="Models\Planos.cs" />
+    <Compile Include="Models\ServidorLDAP.cs" />
     <Compile Include="Models\StatusPlanos.cs" />
     <Compile Include="Models\UploadFileResult.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -201,6 +204,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

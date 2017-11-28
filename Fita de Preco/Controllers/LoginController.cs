@@ -1,10 +1,7 @@
 ﻿using Fita_de_Preco.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+
 
 namespace Fita_de_Preco.Controllers
 {
@@ -31,8 +28,10 @@ namespace Fita_de_Preco.Controllers
             }
             else
             {
+                ServidorLDAP.autenticar("luisfelipe@grupovdl.com.br", "Anadavi@2016");
+
                 //if (db.Usuarios.Count(p => p.Nome == usu.Nome && p.Senha == usu.Senha) > 0)
-                if(Usuario.nomeUsu == usu.Nome && Usuario.senhaUsu == usu.Senha)
+                if (Usuario.nomeUsu == usu.Nome && Usuario.senhaUsu == usu.Senha)
                 {
                     string nome = usu.Nome;
                     /*

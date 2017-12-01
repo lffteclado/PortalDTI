@@ -18,11 +18,11 @@ namespace Fita_de_Preco.Models
         [DisplayName("Funcionário")]
         public int IDFuncionario { get; set; }
 
-        [Required(ErrorMessage = "Informe o Nome de Usuário!")]
-        [MaxLength(15)]
-        [DataType(DataType.Text)]
-        [DisplayName("Usuário")]
-        public string Nome { get; set; }
+        [Required(ErrorMessage = "Informe o Email!")]
+        [MaxLength(30)]
+        [DataType(DataType.EmailAddress)]
+        [DisplayName("Email")]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Informe a Senha!")]
         [MaxLength(15)]

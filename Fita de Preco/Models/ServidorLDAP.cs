@@ -55,11 +55,15 @@ namespace Fita_de_Preco.Models
             //set { _mensagem = value; } 
         }
 
-        public static void autenticar(string email, string senha)
+        public static List<string> autenticar(string email, string senha)
         {
             string[] emailBroke = email.Split('@');
 
             string[] dominioBroke = emailBroke[1].Split('.');
+
+            List<string> retorno = new List<string>();
+
+            retorno.Add(emailBroke[0]);
 
             string login = @"uid=" + emailBroke[0] + ",ou=people,dc=" + dominioBroke[0] + ",dc=" + dominioBroke[1] + ",dc=" + dominioBroke[2];
 
@@ -74,18 +78,22 @@ namespace Fita_de_Preco.Models
                 NetworkCredential nc = new NetworkCredential(login, senha);
                 //NetworkCredential nc = new NetworkCredential("uid=luisfelipe,ou=people,dc=grupovdl,dc=com,dc=br", ""); //password
                 ldapConnection.Bind(nc);
-                _mensagem = "LdapConnection authentication success";
-
+                _mensagem = "success";
+                retorno.Add(_mensagem);
                 ldapConnection.Dispose();
             }
             catch (LdapException e)
             {
-                _mensagem = ("\r\nUnable to login:\r\n\t" + e.Message);
+                _mensagem =  e.Message;
+                retorno.Add(_mensagem);
             }
             catch (Exception e)
             {
                 _mensagem = ("\r\nUnexpected exception occured:\r\n\t" + e.GetType() + ":" + e.Message);
+                retorno.Add(_mensagem);
             }
+
+            return retorno;
 
         }
     }

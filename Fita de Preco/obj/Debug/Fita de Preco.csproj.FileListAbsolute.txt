@@ -164,8 +164,6 @@ E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\
 E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.csproj.CoreCompileInputs.cache
 E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.dll
 E:\Documentos\Visual Studio 2017\Projects\Fita de Preco\Fita de Preco\obj\Debug\Fita de Preco.pdb
-E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csprojResolveAssemblyReference.cache
-E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csproj.CoreCompileInputs.cache
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\ApplicationInsights.config
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\roslyn\csc.exe
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -183,6 +181,8 @@ E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Fita de Pr
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Fita de Preco.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Fita de Preco.pdb
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Antlr3.Runtime.dll
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.dll
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.SqlServer.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Microsoft.AI.Agent.Intercept.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Microsoft.AI.DependencyCollector.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -204,6 +204,8 @@ E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\System.Web
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\System.Web.WebPages.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\System.Web.WebPages.Razor.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\WebGrease.dll
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.xml
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.SqlServer.xml
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Microsoft.AI.DependencyCollector.xml
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Microsoft.AI.Web.xml
@@ -222,5 +224,6 @@ E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\System.Web
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\System.Web.WebPages.Razor.xml
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Antlr3.Runtime.pdb
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Newtonsoft.Json.xml
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csproj.CoreCompileInputs.cache
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.pdb

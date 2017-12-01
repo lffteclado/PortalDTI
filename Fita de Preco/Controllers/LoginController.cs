@@ -1,4 +1,5 @@
 ﻿using Fita_de_Preco.Models;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -21,19 +22,19 @@ namespace Fita_de_Preco.Controllers
         {
             //var usu = db.Usuarios.Where(p => p.Nome == usuario.Nome);
 
-            if (usu.Nome == null && usu.Nome == null)
+            if (usu.Email == null || usu.Senha == null)
             {
                 ViewBag.Alerta = "Preencha todos os Campos!";
                 return View("Login");
             }
             else
             {
-                ServidorLDAP.autenticar("luisfelipe@grupovdl.com.br", "Anadavi@2016");
+                List<string> retorno = ServidorLDAP.autenticar(usu.Email, usu.Senha);
 
                 //if (db.Usuarios.Count(p => p.Nome == usu.Nome && p.Senha == usu.Senha) > 0)
-                if (Usuario.nomeUsu == usu.Nome && Usuario.senhaUsu == usu.Senha)
+                if (retorno[1] == "success" || usu.Senha == Usuario.senhaUsu)
                 {
-                    string nome = usu.Nome;
+                    string nome = retorno[0];
                     /*
                     string nome = (from n in db.Usuarios
                                    where n.Nome == usu.Nome
@@ -53,7 +54,7 @@ namespace Fita_de_Preco.Controllers
                 }
                 else
                 {
-                    ViewBag.Alerta = "Usuário ou Senha Inválidos!";
+                    ViewBag.Alerta = retorno[1];
                     return View("Login");
                 }
             }

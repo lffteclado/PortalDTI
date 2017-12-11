@@ -169,9 +169,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\APIComUtesiController.cs" />
     <Compile Include="Controllers\ComandosUteisController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\ErroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MonitorController.cs" />
@@ -216,6 +218,7 @@
     <Compile Include="Models\StatusPlanos.cs" />
     <Compile Include="Models\UploadFileResult.cs" />
     <Compile Include="Models\UserManager.cs" />
+    <Compile Include="Models\UserSignUpView.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\XML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -301,12 +304,15 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\ComandosUteis\Index.cshtml" />
     <Content Include="Views\NacionalImportado\Index.cshtml" />
+    <Content Include="Views\Erro\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Corrigido\" />
     <Folder Include="Content\Uploads\" />
     <Folder Include="Content\XML\" />
+    <Folder Include="Controllers\Admin\" />
     <Folder Include="Imagens\" />
   </ItemGroup>
   <ItemGroup>

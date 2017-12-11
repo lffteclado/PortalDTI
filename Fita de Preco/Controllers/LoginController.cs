@@ -34,7 +34,8 @@ namespace Fita_de_Preco.Controllers
                 //if (db.Usuarios.Count(p => p.Nome == usu.Nome && p.Senha == usu.Senha) > 0)
                 if (retorno[1] == "success" || usu.Senha == Usuario.senhaUsu)
                 {
-                    string nome = retorno[0];
+                    //string nome = retorno[0];
+                    string nome = usu.Email;
                     /*
                     string nome = (from n in db.Usuarios
                                    where n.Nome == usu.Nome

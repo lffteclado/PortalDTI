@@ -1,4 +1,5 @@
 ﻿using Fita_de_Preco.Models;
+using Fita_de_Preco.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Fita_de_Preco.Controllers
     public class ComandosUteisController : Controller
     {
         // GET: ComandosUteis
-        [Authorize]
+        [AuthorizeRoles("Admin")]
         public ActionResult Index()
         {
            

@@ -22,7 +22,6 @@ namespace Fita_de_Preco.Controllers
         [Authorize]
         public ActionResult Index()
         {
-
             return View();
         }
 

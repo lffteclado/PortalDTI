@@ -35,7 +35,7 @@ namespace Fita_de_Preco.Security
 
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            filterContext.Result = new RedirectResult("~/Home/UnAuthorized");
+            filterContext.Result = new RedirectResult("~/Erro/Index");
 
         }
     }

@@ -6,7 +6,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\User\Desktop\Nova pasta</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\User\Desktop\PortalDTI</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -27,11 +27,17 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="bin/App_global.asax.dll">
       <publishTime>10/25/2017 18:15:08</publishTime>
     </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/04/2017 01:44:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/04/2017 01:44:16</publishTime>
+    </File>
     <File Include="bin/Fita de Preco.dll">
-      <publishTime>10/25/2017 18:15:00</publishTime>
+      <publishTime>12/05/2017 17:47:14</publishTime>
     </File>
     <File Include="bin/Fita de Preco.pdb">
-      <publishTime>10/25/2017 18:15:00</publishTime>
+      <publishTime>12/05/2017 17:47:14</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>09/24/2017 15:32:32</publishTime>
@@ -159,8 +165,14 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="fonts/glyphicons-halflings-regular.woff">
       <publishTime>09/24/2017 15:32:32</publishTime>
     </File>
-    <File Include="packages.config">
+    <File Include="Global.asax">
       <publishTime>09/24/2017 15:32:32</publishTime>
+    </File>
+    <File Include="Models/DataModel/DBModel.edmx.diagram">
+      <publishTime>11/30/2017 13:02:37</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/30/2017 11:09:27</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
       <publishTime>10/25/2017 18:15:02</publishTime>
@@ -246,11 +258,17 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="Scripts/_references.js">
       <publishTime>09/24/2017 15:32:32</publishTime>
     </File>
+    <File Include="Views/Admin/Index.cshtml">
+      <publishTime>12/01/2017 15:11:02</publishTime>
+    </File>
     <File Include="Views/ComandosUteis/Index.cshtml">
       <publishTime>10/03/2017 11:33:26</publishTime>
     </File>
     <File Include="Views/Download/Index.cshtml">
       <publishTime>09/24/2017 15:32:32</publishTime>
+    </File>
+    <File Include="Views/Erro/Index.cshtml">
+      <publishTime>12/01/2017 12:36:23</publishTime>
     </File>
     <File Include="Views/Home/Arquivo.cshtml">
       <publishTime>09/24/2017 15:32:32</publishTime>
@@ -259,7 +277,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>09/24/2017 15:32:32</publishTime>
     </File>
     <File Include="Views/Login/Login.cshtml">
-      <publishTime>09/24/2017 15:32:32</publishTime>
+      <publishTime>11/29/2017 16:04:29</publishTime>
     </File>
     <File Include="Views/Monitor/Index.cshtml">
       <publishTime>10/03/2017 14:59:54</publishTime>
@@ -268,7 +286,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>09/24/2017 15:32:32</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>09/24/2017 15:32:32</publishTime>
+      <publishTime>12/01/2017 12:33:03</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>09/24/2017 15:32:32</publishTime>
@@ -277,7 +295,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>09/28/2017 15:04:11</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>09/24/2017 15:32:32</publishTime>
+      <publishTime>12/01/2017 14:48:53</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>09/24/2017 15:32:32</publishTime>
@@ -289,7 +307,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>09/24/2017 15:32:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/25/2017 18:15:01</publishTime>
+      <publishTime>12/05/2017 17:47:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

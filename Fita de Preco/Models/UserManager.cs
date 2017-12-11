@@ -59,7 +59,20 @@ namespace Fita_de_Preco.Models
             {
                 return db.SYSUsers.Where(o => o.LoginName.Equals(loginName)).Any();
             }
-        }
+        }
+
+        public string GetUserPassword(string loginName)
+        {
+            using (dbVDLEntities db = new dbVDLEntities())
+            {
+                var user = db.SYSUsers.Where(o => o.LoginName.ToLower().Equals(loginName));
+                if (user.Any())
+                    return user.FirstOrDefault().PasswordEncryptedText;
+                else
+                    return string.Empty;
+            }
+        }
+
 
         public bool IsUserInRole(string loginName, string roleName)
         {

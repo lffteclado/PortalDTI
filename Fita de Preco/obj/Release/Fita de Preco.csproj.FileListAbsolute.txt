@@ -58,3 +58,7 @@ E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Release\Fi
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Release\Fita de Preco.csproj.CoreCompileInputs.cache
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Release\Fita de Preco.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Release\Fita de Preco.pdb
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.dll
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.SqlServer.dll
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.xml
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\EntityFramework.SqlServer.xml

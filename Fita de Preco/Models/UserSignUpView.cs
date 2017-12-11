@@ -24,6 +24,7 @@ namespace Fita_de_Preco.Models
         [Required(ErrorMessage = "*")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        public string Gender { get; set; }
+        public string Gender { get; set; }
+
     }
 }

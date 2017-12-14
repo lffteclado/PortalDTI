@@ -1,13 +1,23 @@
-﻿@if (Request.IsAuthenticated)
+﻿@using Fita_de_Preco.Models
+@if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Login", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-             
+
         string[] email = HttpContext.Current.User.Identity.Name.Split('@');
-       
+
+        UserManager user = new UserManager();
 
         <ul class="nav navbar-nav navbar-right">
+
+            @if(user.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin"))
+            {
+                <li>
+                    @Html.ActionLink("Administração","Index", "Admin", routeValues: null, htmlAttributes: new { title = "Administração" })
+                </li>
+            }
+
             <li>
                 @Html.ActionLink("Bem Vindo " + email[0] + "!", "Index", "Monitor", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
@@ -18,7 +28,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Acessar", "Index", "Index", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("Acessar", "Login", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }
 

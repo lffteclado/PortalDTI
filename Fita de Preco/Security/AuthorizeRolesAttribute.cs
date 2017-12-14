@@ -38,5 +38,7 @@ namespace Fita_de_Preco.Security
             filterContext.Result = new RedirectResult("~/Erro/Index");
 
         }
+
+
     }
 }

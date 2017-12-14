@@ -1,8 +1,6 @@
 ﻿using Fita_de_Preco.Models.DataModel;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace Fita_de_Preco.Models
 {

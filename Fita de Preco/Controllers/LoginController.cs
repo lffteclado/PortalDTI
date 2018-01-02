@@ -32,7 +32,7 @@ namespace Fita_de_Preco.Controllers
                 List<string> retorno = ServidorLDAP.autenticar(usu.Email, usu.Senha);
 
                 //if (db.Usuarios.Count(p => p.Nome == usu.Nome && p.Senha == usu.Senha) > 0)
-                if (retorno[1] == "success" || usu.Senha == Usuario.senhaUsu)
+                if (retorno[1] == "success" || usu.Senha == Usuario.senhaUsu) //Autenticando com o Zimbra
                 {
                     //string nome = retorno[0];
                     string nome = usu.Email;

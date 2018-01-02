@@ -1,4 +1,5 @@
 ﻿using Fita_de_Preco.Models;
+using Fita_de_Preco.Security;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -8,7 +9,7 @@ namespace Fita_de_Preco.Controllers
     {
         DBContexto db = new DBContexto();
 
-        [Authorize]
+        [AuthorizeRoles("Admin")]
         public ActionResult Index()
         {
             List<StatusPlanos> lstPlanos = new List<StatusPlanos>();

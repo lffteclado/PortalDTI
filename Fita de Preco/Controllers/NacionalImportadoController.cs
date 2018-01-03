@@ -218,7 +218,7 @@ namespace Fita_de_Preco.Controllers
             using (StreamWriter file = new StreamWriter(uploadPath2 + "/ProdutoImportado.sql", true))
             {
 
-                file.WriteLine("--Script para Alimentar a Tabela tempProdutoImportados com os itens Importados!");
+                file.WriteLine("--Script para Alimentar a Tabela [dbVDL].dbo.tempProdutoImportados com os itens Importados!");
                 file.WriteLine("----Quantidade de itens: " + itemImportado.Count);
                 file.WriteLine("declare @Prod VARCHAR(30)");
                 file.WriteLine("declare @Tipo VARCHAR(10)");
@@ -226,7 +226,7 @@ namespace Fita_de_Preco.Controllers
                 for (int i = 0; i < itemImportado.Count; i++)
                 {
                     file.WriteLine("set @Prod ='" + itemImportado[i] + "' set @Tipo ='G'");
-                    file.WriteLine("insert into tempProdutoImportados(Codigo,Tipo) values (@Prod, @Tipo)");
+                    file.WriteLine("insert into [dbVDL].dbo.tempProdutoImportados(Codigo,Tipo) values (@Prod, @Tipo)");
 
                 }
 
@@ -244,7 +244,7 @@ namespace Fita_de_Preco.Controllers
                 for (int i = 0; i < itemNacional.Count; i++)
                 {
                     file.WriteLine("set @Prod ='" + itemNacional[i] + "' set @Tipo ='F'");
-                    file.WriteLine("insert into tempProdutoImportados(Codigo,Tipo) values (@Prod, @Tipo)");
+                    file.WriteLine("insert into [dbVDL].dbo.tempProdutoImportados(Codigo,Tipo) values (@Prod, @Tipo)");
 
                 }
 

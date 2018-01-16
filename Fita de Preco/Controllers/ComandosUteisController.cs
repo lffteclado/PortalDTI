@@ -1,9 +1,4 @@
-﻿using Fita_de_Preco.Models;
-using Fita_de_Preco.Security;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Fita_de_Preco.Security;
 using System.Web.Mvc;
 
 namespace Fita_de_Preco.Controllers

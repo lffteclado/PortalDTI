@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
-using System.Xml;
 
 namespace Fita_de_Preco.Models
 {
@@ -33,15 +32,17 @@ namespace Fita_de_Preco.Models
 
                     while (r.Read())
                     {
-                        StatusPlanos plano = new StatusPlanos();
-
-                        plano.CodEmpresa = r["CodEmpresa"].ToString();
-                        plano.NomeEmpresa = r["NomeEmpresa"].ToString();
-                        plano.Local = r["Local"].ToString();
-                        plano.PlanoBloqueio = r["PlanoBloqueio"].ToString();
-                        plano.VendaAbaixoCusto = r["VendaAbaixoCusto"].ToString();
-                        plano.DescontoMinimo = r["DescontoMinimo"].ToString();
-                        plano.ValorDescMinimo = string.Format("{0:C}", r["ValorDescMinimo"]);
+                       
+                        StatusPlanos plano = new StatusPlanos
+                        {
+                            CodEmpresa = r["CodEmpresa"].ToString(),
+                            NomeEmpresa = r["NomeEmpresa"].ToString(),
+                            Local = r["Local"].ToString(),
+                            PlanoBloqueio = r["PlanoBloqueio"].ToString(),
+                            VendaAbaixoCusto = r["VendaAbaixoCusto"].ToString(),
+                            DescontoMinimo = r["DescontoMinimo"].ToString(),
+                            ValorDescMinimo = string.Format("{0:C}", r["ValorDescMinimo"])
+                        };
 
                         lstPlanos.Add(plano);
 
@@ -71,15 +72,16 @@ namespace Fita_de_Preco.Models
 
                     while (r.Read())
                     {
-                        StatusPlanos plano = new StatusPlanos();
-
-                        plano.CodEmpresa = r["CodEmpresa"].ToString();
-                        plano.NomeEmpresa = r["NomeEmpresa"].ToString();
-                        plano.Local = r["Local"].ToString();
-                        plano.PlanoBloqueio = r["PlanoBloqueio"].ToString();
-                        plano.VendaAbaixoCusto = r["VendaAbaixoCusto"].ToString();
-                        plano.DescontoMinimo = r["DescontoMinimo"].ToString();
-                        plano.ValorDescMinimo = string.Format("{0:C}", r["ValorDescMinimo"]);
+                        StatusPlanos plano = new StatusPlanos
+                        {
+                            CodEmpresa = r["CodEmpresa"].ToString(),
+                            NomeEmpresa = r["NomeEmpresa"].ToString(),
+                            Local = r["Local"].ToString(),
+                            PlanoBloqueio = r["PlanoBloqueio"].ToString(),
+                            VendaAbaixoCusto = r["VendaAbaixoCusto"].ToString(),
+                            DescontoMinimo = r["DescontoMinimo"].ToString(),
+                            ValorDescMinimo = string.Format("{0:C}", r["ValorDescMinimo"])
+                        };
 
                         lstPlanos.Add(plano);
 
@@ -114,15 +116,16 @@ namespace Fita_de_Preco.Models
 
                     while (r.Read())
                     {
-                        StatusPlanos plano = new StatusPlanos();
-
-                        plano.CodEmpresa = r["CodEmpresa"].ToString();
-                        plano.NomeEmpresa = r["NomeEmpresa"].ToString();
-                        plano.Local = r["Local"].ToString();
-                        plano.PlanoBloqueio = r["PlanoBloqueio"].ToString();
-                        plano.VendaAbaixoCusto = r["VendaAbaixoCusto"].ToString();
-                        plano.DescontoMinimo = r["DescontoMinimo"].ToString();
-                        plano.ValorDescMinimo = string.Format("{0:C}", r["ValorDescMinimo"]);
+                        StatusPlanos plano = new StatusPlanos
+                        {
+                            CodEmpresa = r["CodEmpresa"].ToString(),
+                            NomeEmpresa = r["NomeEmpresa"].ToString(),
+                            Local = r["Local"].ToString(),
+                            PlanoBloqueio = r["PlanoBloqueio"].ToString(),
+                            VendaAbaixoCusto = r["VendaAbaixoCusto"].ToString(),
+                            DescontoMinimo = r["DescontoMinimo"].ToString(),
+                            ValorDescMinimo = string.Format("{0:C}", r["ValorDescMinimo"])
+                        };
 
                         lstPlanos.Add(plano);
 
@@ -237,8 +240,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", plano.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoPlano", plano.CodigoPlano);
                             cmd.Parameters.AddWithValue("@PlanoBloqueado", plano.PlanoBloqueado);
@@ -258,7 +263,7 @@ namespace Fita_de_Preco.Models
                     }
                 }
 
-            }else if (plano.CodigoEmpresa == 260)
+            }else if (plano.CodigoEmpresa == 260 || plano.CodigoEmpresa == 130 || plano.CodigoEmpresa == 930 || plano.CodigoEmpresa == 2890)
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
 
@@ -268,8 +273,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", plano.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoPlano", plano.CodigoPlano);
                             cmd.Parameters.AddWithValue("@PlanoBloqueado", plano.PlanoBloqueado);
@@ -299,8 +306,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", plano.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoPlano", plano.CodigoPlano);
                             cmd.Parameters.AddWithValue("@PlanoBloqueado", plano.PlanoBloqueado);
@@ -334,8 +343,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", custo.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoLocal", custo.CodigoLocal);
                             cmd.Parameters.AddWithValue("@Bloqueado", custo.Bloqueado);
@@ -355,7 +366,7 @@ namespace Fita_de_Preco.Models
                     }
                 }
 
-            }else if (custo.CodigoEmpresa == 260)
+            }else if (custo.CodigoEmpresa == 260 || custo.CodigoEmpresa == 130 || custo.CodigoEmpresa == 930 || custo.CodigoEmpresa == 2890)
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
 
@@ -365,8 +376,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", custo.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoLocal", custo.CodigoLocal);
                             cmd.Parameters.AddWithValue("@Bloqueado", custo.Bloqueado);
@@ -396,8 +409,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", custo.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoLocal", custo.CodigoLocal);
                             cmd.Parameters.AddWithValue("@Bloqueado", custo.Bloqueado);
@@ -419,7 +434,6 @@ namespace Fita_de_Preco.Models
             }
         }
 
-
         public void BloquearDescMinimo(DescMinino desc)
         {
             /*
@@ -440,8 +454,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", desc.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoLocal", desc.CodigoLocal);
                             cmd.Parameters.AddWithValue("@Bloqueado", desc.Bloqueado);
@@ -461,7 +477,7 @@ namespace Fita_de_Preco.Models
                         }
                     }
                 }
-            }else if (desc.CodigoEmpresa == 260)
+            }else if (desc.CodigoEmpresa == 260 || desc.CodigoEmpresa == 130 || desc.CodigoEmpresa == 930 || desc.CodigoEmpresa == 2890)
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
 
@@ -471,8 +487,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", desc.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoLocal", desc.CodigoLocal);
                             cmd.Parameters.AddWithValue("@Bloqueado", desc.Bloqueado);
@@ -503,8 +521,10 @@ namespace Fita_de_Preco.Models
                     {
                         try
                         {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
                             cmd.Parameters.AddWithValue("@CodigoEmpresa", desc.CodigoEmpresa);
                             cmd.Parameters.AddWithValue("@CodigoLocal", desc.CodigoLocal);
                             cmd.Parameters.AddWithValue("@Bloqueado", desc.Bloqueado);

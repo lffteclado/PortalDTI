@@ -1,11 +1,7 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Threading.Tasks;
-using System.Net;
 
 namespace Fita_de_Preco.Controllers
 {
@@ -13,9 +9,6 @@ namespace Fita_de_Preco.Controllers
     {
         IEnumerable<string> arquivo;//Cria Objeto para Armazenar o Arquivo Lido
         string nomeArquivo = string.Empty;//Armazena o nome do Arquivo Lido
-        //bool status = false;//Verifica se exite arquivo para ser lido caso exista o Status muda para True
-        //List<string> nacional = new List<string>();
-        //List<string> importado = new List<string>();
         List<string> itemImportado = new List<string>();
         List<string> itemNacional = new List<string>();
 
@@ -28,6 +21,7 @@ namespace Fita_de_Preco.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public ActionResult Upload()
         {
             int i = 0;
@@ -79,7 +73,7 @@ namespace Fita_de_Preco.Controllers
         #endregion
 
         [Authorize]
-            public ActionResult ArquivoNacImp()
+        public ActionResult ArquivoNacImp()
         {
 
 

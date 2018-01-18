@@ -263,7 +263,7 @@ namespace Fita_de_Preco.Models
                     }
                 }
 
-            }else if (plano.CodigoEmpresa == 260 || plano.CodigoEmpresa == 130 || plano.CodigoEmpresa == 930 || plano.CodigoEmpresa == 2890)
+            }else if (plano.CodigoEmpresa == 260 || plano.CodigoEmpresa == 130 || plano.CodigoEmpresa == 930 || plano.CodigoEmpresa == 2890 || plano.CodigoEmpresa == 2620)
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
 
@@ -366,7 +366,7 @@ namespace Fita_de_Preco.Models
                     }
                 }
 
-            }else if (custo.CodigoEmpresa == 260 || custo.CodigoEmpresa == 130 || custo.CodigoEmpresa == 930 || custo.CodigoEmpresa == 2890)
+            }else if (custo.CodigoEmpresa == 260 || custo.CodigoEmpresa == 130 || custo.CodigoEmpresa == 930 || custo.CodigoEmpresa == 2890 || custo.CodigoEmpresa == 2620)
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
 
@@ -477,7 +477,7 @@ namespace Fita_de_Preco.Models
                         }
                     }
                 }
-            }else if (desc.CodigoEmpresa == 260 || desc.CodigoEmpresa == 130 || desc.CodigoEmpresa == 930 || desc.CodigoEmpresa == 2890)
+            }else if (desc.CodigoEmpresa == 260 || desc.CodigoEmpresa == 130 || desc.CodigoEmpresa == 930 || desc.CodigoEmpresa == 2890 || desc.CodigoEmpresa == 2620)
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
 

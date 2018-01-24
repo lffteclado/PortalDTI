@@ -224,7 +224,6 @@ E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\System.Web
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\System.Web.WebPages.Razor.xml
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Antlr3.Runtime.pdb
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Newtonsoft.Json.xml
-E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csprojResolveAssemblyReference.cache
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csproj.CoreCompileInputs.cache
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.pdb

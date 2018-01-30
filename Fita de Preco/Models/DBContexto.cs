@@ -11,9 +11,9 @@ namespace Fita_de_Preco.Models
     {
         List<StatusPlanos> lstPlanos = new List<StatusPlanos>();
 
-        public void ObterPlanoDB60()
+        public void ObterPlanoDBOLD()
         {
-            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
+            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBOLD"] as ConnectionStringSettings;
 
             if (getString != null)
             {
@@ -51,54 +51,12 @@ namespace Fita_de_Preco.Models
             }
         }
 
-        public void ObterPlanoServer242()
-        {
-            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
-
-            if (getString != null)
-            {
-                string sSQL = "select * from vwCheckVDL";
-
-                using (SqlConnection con = new SqlConnection(getString.ConnectionString))
-                {
-                    //List<StatusPlanos> lstPlanos = new List<StatusPlanos>();
-
-                    SqlDataReader r = null;
-                    SqlCommand cmd = new SqlCommand(sSQL, con);
-
-                    con.Open();
-
-                    r = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-
-                    while (r.Read())
-                    {
-                        StatusPlanos plano = new StatusPlanos
-                        {
-                            CodEmpresa = r["CodEmpresa"].ToString(),
-                            NomeEmpresa = r["NomeEmpresa"].ToString(),
-                            Local = r["Local"].ToString(),
-                            PlanoBloqueio = r["PlanoBloqueio"].ToString(),
-                            VendaAbaixoCusto = r["VendaAbaixoCusto"].ToString(),
-                            DescontoMinimo = r["DescontoMinimo"].ToString(),
-                            ValorDescMinimo = string.Format("{0:C}", r["ValorDescMinimo"])
-                        };
-
-                        lstPlanos.Add(plano);
-
-                    }
-                }
-            }
-        }
-
         public List<StatusPlanos> ObterPlanos()
-        {
-            //Obtendo os Planos das Casas do Server 242
-            ObterPlanoServer242();
+        { 
+            //Obtendo os Planos de Goias
+            ObterPlanoDBOLD();
 
-            //Obtendo os Planos das Casas do Server 0.60
-            ObterPlanoDB60();
-
-            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
+            ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
 
             if (getString != null)
             {
@@ -155,7 +113,7 @@ namespace Fita_de_Preco.Models
                     break;
 
                 case "930":
-                    banco = "dbCardiesel_I";
+                    banco = "dbCardiesel";
                     break;
 
                 case "2630":
@@ -163,7 +121,7 @@ namespace Fita_de_Preco.Models
                     break;
 
                 case "2890":
-                    banco = "dbPostoImperialDP";
+                    banco = "dbPostoimperial";
                     break;
 
                 case "2620":
@@ -179,15 +137,11 @@ namespace Fita_de_Preco.Models
                     break;
 
                 case "260":
-                    banco = "dbValadaresCNV";
+                    banco = "dbValadares";
                     break;
 
                 case "3140":
-
-                    getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
-
                     banco = "dbMontesClaros";
-
                     break;
             
 
@@ -229,10 +183,10 @@ namespace Fita_de_Preco.Models
 
         public void BloquearPlanos(Planos plano)
         {
-            if (plano.CodigoEmpresa == 3140 || plano.CodigoEmpresa == 3610)
+            if (plano.CodigoEmpresa == 2630)
             {            
 
-                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBOLD"] as ConnectionStringSettings;
 
                 if (getString != null)
                 {
@@ -263,38 +217,6 @@ namespace Fita_de_Preco.Models
                     }
                 }
 
-            }else if (plano.CodigoEmpresa == 260 || plano.CodigoEmpresa == 130 || plano.CodigoEmpresa == 930 || plano.CodigoEmpresa == 2890 || plano.CodigoEmpresa == 2620 || plano.CodigoEmpresa == 1200)
-            {
-                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
-
-                if (getString != null)
-                {
-                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
-                    {
-                        try
-                        {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaPlano", con)
-                            {
-                                CommandType = CommandType.StoredProcedure
-                            };
-                            cmd.Parameters.AddWithValue("@CodigoEmpresa", plano.CodigoEmpresa);
-                            cmd.Parameters.AddWithValue("@CodigoPlano", plano.CodigoPlano);
-                            cmd.Parameters.AddWithValue("@PlanoBloqueado", plano.PlanoBloqueado);
-
-                            con.Open();
-
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception e)
-                        {
-                            string msg = e.Message;
-                        }
-                        finally
-                        {
-                            con.Close();
-                        }
-                    }
-                }
             }
             else
             {
@@ -333,9 +255,9 @@ namespace Fita_de_Preco.Models
 
         public void BloquearAbaixoCusto(Custo custo)
         {
-            if (custo.CodigoEmpresa == 3140 || custo.CodigoEmpresa == 3610)
+            if (custo.CodigoEmpresa == 2630)
             {      
-                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBOLD"] as ConnectionStringSettings;
 
                 if (getString != null)
                 {
@@ -366,40 +288,8 @@ namespace Fita_de_Preco.Models
                     }
                 }
 
-            }else if (custo.CodigoEmpresa == 260 || custo.CodigoEmpresa == 130 || custo.CodigoEmpresa == 930 || custo.CodigoEmpresa == 2890 || custo.CodigoEmpresa == 2620 || custo.CodigoEmpresa == 1200)
-            {
-                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
-
-                if (getString != null)
-                {
-                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
-                    {
-                        try
-                        {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaAbaixoCusto", con)
-                            {
-                                CommandType = CommandType.StoredProcedure
-                            };
-                            cmd.Parameters.AddWithValue("@CodigoEmpresa", custo.CodigoEmpresa);
-                            cmd.Parameters.AddWithValue("@CodigoLocal", custo.CodigoLocal);
-                            cmd.Parameters.AddWithValue("@Bloqueado", custo.Bloqueado);
-
-                            con.Open();
-
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception e)
-                        {
-                            string msg = e.Message;
-                        }
-                        finally
-                        {
-                            con.Close();
-                        }
-                    }
-                }
             }
-            else
+            else 
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
 
@@ -444,42 +334,9 @@ namespace Fita_de_Preco.Models
              * @ValorMin char(5)
              */
 
-            if (desc.CodigoEmpresa == 3140 || desc.CodigoEmpresa == 3610)
+            if (desc.CodigoEmpresa == 2630)
             {            
-                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBMOC"] as ConnectionStringSettings;
-
-                if (getString != null)
-                {
-                    using (SqlConnection con = new SqlConnection(getString.ConnectionString))
-                    {
-                        try
-                        {
-                            SqlCommand cmd = new SqlCommand("sp_BloqueiaDescMinimo", con)
-                            {
-                                CommandType = CommandType.StoredProcedure
-                            };
-                            cmd.Parameters.AddWithValue("@CodigoEmpresa", desc.CodigoEmpresa);
-                            cmd.Parameters.AddWithValue("@CodigoLocal", desc.CodigoLocal);
-                            cmd.Parameters.AddWithValue("@Bloqueado", desc.Bloqueado);
-                            cmd.Parameters.AddWithValue("@ValorMin", desc.ValorMin);
-
-                            con.Open();
-
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception e)
-                        {
-                            string msg = e.Message;
-                        }
-                        finally
-                        {
-                            con.Close();
-                        }
-                    }
-                }
-            }else if (desc.CodigoEmpresa == 260 || desc.CodigoEmpresa == 130 || desc.CodigoEmpresa == 930 || desc.CodigoEmpresa == 2890 || desc.CodigoEmpresa == 2620 || desc.CodigoEmpresa == 1200)
-            {
-                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DB60"] as ConnectionStringSettings;
+                ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["DBOLD"] as ConnectionStringSettings;
 
                 if (getString != null)
                 {
@@ -511,7 +368,7 @@ namespace Fita_de_Preco.Models
                     }
                 }
             }
-            else
+            else 
             {
                 ConnectionStringSettings getString = WebConfigurationManager.ConnectionStrings["ConnDB"] as ConnectionStringSettings;
 

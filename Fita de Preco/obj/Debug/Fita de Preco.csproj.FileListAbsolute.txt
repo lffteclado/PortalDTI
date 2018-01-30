@@ -227,3 +227,4 @@ E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\bin\Newtonsoft
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csproj.CoreCompileInputs.cache
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.dll
 E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.pdb
+E:\Documentos\Visual Studio 2017\Projects\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csprojResolveAssemblyReference.cache

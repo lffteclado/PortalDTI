@@ -1,13 +1,11 @@
-IF EXISTS(SELECT 1 FROM sysobjects WHERE id = object_id('sp_BloqueiaAbaixoCusto'))
-BEGIN
-	DROP PROCEDURE dbo.sp_BloqueiaAbaixoCusto
-END
-GO
 CREATE PROCEDURE  dbo.sp_BloqueiaAbaixoCusto
 /*
 * PROCEDURE CRIADA PARA BLOQUEAR E DESBLOQUEAR VENDAS ABAIXO DO CUSTO
 * AUTOR: Luís Felipe Ferreira
 * Data: 08/09/2017
+* ATUALIZAÇÃO: 02/01/2018
+* MOTIVO: MIGRAÇÃO NOVO SERVIDOR 0.60
+* AUTOR: LUÍS FELIPE
 * EXEC sp_BloqueiaAbaixoCusto 930, 0, 'F'
 */
 
@@ -33,7 +31,7 @@ BEGIN
  END
  IF (@CodigoEmpresa = 930)--CARDIESEL
  BEGIN
-	UPDATE dbCardiesel_I.dbo.tbLocalFT
+	UPDATE dbCardiesel.dbo.tbLocalFT
 	SET DadosEmpresaPreImpresso = @Bloqueado
 	WHERE CodigoEmpresa = @CodigoEmpresa
 	AND CodigoLocal = @CodigoLocal
@@ -47,7 +45,7 @@ BEGIN
  END
  IF (@CodigoEmpresa = 2890)--POSTO IMPERIAL
  BEGIN
-	UPDATE dbPostoImperialDP.dbo.tbLocalFT
+	UPDATE dbPostoimperial.dbo.tbLocalFT
 	SET DadosEmpresaPreImpresso = @Bloqueado
 	WHERE CodigoEmpresa = @CodigoEmpresa
 	AND CodigoLocal = @CodigoLocal
@@ -68,9 +66,25 @@ BEGIN
  END
  IF (@CodigoEmpresa = 260)--VALADARES
  BEGIN
-	UPDATE dbValadaresCNV.dbo.tbLocalFT
+	UPDATE dbValadares.dbo.tbLocalFT
+	SET DadosEmpresaPreImpresso = @Bloqueado
+	WHERE CodigoEmpresa = @CodigoEmpresa
+	AND CodigoLocal = @CodigoLocal
+ END
+ IF (@CodigoEmpresa = 3140)--MONTES CLAROS
+ BEGIN
+	UPDATE dbMontesClaros.dbo.tbLocalFT
+	SET DadosEmpresaPreImpresso = @Bloqueado
+	WHERE CodigoEmpresa = @CodigoEmpresa
+	AND CodigoLocal = @CodigoLocal
+ END
+ IF (@CodigoEmpresa = 3610)--REDE MINEIRA
+ BEGIN
+	UPDATE dbRedeMineira.dbo.tbLocalFT
 	SET DadosEmpresaPreImpresso = @Bloqueado
 	WHERE CodigoEmpresa = @CodigoEmpresa
 	AND CodigoLocal = @CodigoLocal
  END	
 END
+
+

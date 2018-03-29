@@ -9,7 +9,7 @@ namespace Fita_de_Preco.Controllers
     {
         DBContexto db = new DBContexto();
 
-        [AuthorizeRoles("Admin")]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Index()
         {
             List<StatusPlanos> lstPlanos = new List<StatusPlanos>();

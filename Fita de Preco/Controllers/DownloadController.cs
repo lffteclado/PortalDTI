@@ -1,4 +1,5 @@
 ﻿using Fita_de_Preco.Models;
+using Fita_de_Preco.Security;
 using System;
 using System.IO;
 using System.Linq;
@@ -11,14 +12,14 @@ namespace Fita_de_Preco.Controllers
         UploadFileResult oModelArquivos = new UploadFileResult();
 
         // GET: Download
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Index()
         {
             var _arquivos = oModelArquivos.ListaArquivos();
             return View(_arquivos);
         }
 
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public FileResult Download(string id, string nome)
         {
             int _arquivoId = Convert.ToInt32(id);
@@ -35,7 +36,7 @@ namespace Fita_de_Preco.Controllers
             return File(nomeArquivo, contentType, nome);
         }
 
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Deletar(string nome)
         {
             DirectoryInfo dirInfo = new DirectoryInfo(System.Web.Hosting.HostingEnvironment.MapPath("~/Content/Corrigido"));

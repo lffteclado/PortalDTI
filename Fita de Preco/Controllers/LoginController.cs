@@ -50,7 +50,17 @@ namespace Fita_de_Preco.Controllers
 
                     //Rotina para armazenar o Usuário Logado no cookie
                     FormsAuthentication.SetAuthCookie(nome, false);
-                    return RedirectToAction("Index", "Monitor");
+
+                    string[] email = usu.Email.Split('@');
+
+                    if (email[1].Contains("cardiesel"))
+                    {                        
+                        return RedirectToAction("Cardiesel", "ComandosUteis");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Monitor");
+                    }                   
 
                 }
                 else

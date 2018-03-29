@@ -26,9 +26,11 @@ namespace Fita_de_Preco
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
-                     "~/Scripts/angular.min.js",
+                     "~/Scripts/angular.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
                      "~/Scripts/app/Module.js",
-                      "~/Scripts/app/Factory.js",
+                     "~/Scripts/app/Factory.js",
                      "~/Scripts/app/Service.js",
                      "~/Scripts/app/Controller.js"));
 

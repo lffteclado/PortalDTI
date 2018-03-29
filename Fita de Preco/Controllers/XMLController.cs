@@ -1,4 +1,5 @@
 ﻿using Fita_de_Preco.Models;
+using Fita_de_Preco.Security;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
@@ -11,7 +12,7 @@ namespace Fita_de_Preco.Controllers
         DBContexto db = new DBContexto();
 
         // GET: XML
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Index()
         {
             Deletar();
@@ -28,7 +29,7 @@ namespace Fita_de_Preco.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public FileResult PesquisaXML(string NomeConcessionaria, string numeroNF)
         {
             ViewBag.NomeConcessionaria = new SelectList
@@ -68,7 +69,7 @@ namespace Fita_de_Preco.Controllers
 
 
 
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public void montaArquivoXML()
         {
             var salvarPath = Server.MapPath("~/Content/XML");
@@ -82,7 +83,7 @@ namespace Fita_de_Preco.Controllers
             }
         }
 
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public void Deletar()
         {
             DirectoryInfo dirInfo = new DirectoryInfo(System.Web.Hosting.HostingEnvironment.MapPath("~/Content/XML"));

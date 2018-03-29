@@ -6,10 +6,16 @@ namespace Fita_de_Preco.Controllers
     public class ComandosUteisController : Controller
     {
         // GET: ComandosUteis
-        [AuthorizeRoles("Admin")]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Index()
         {
            
+            return View();
+        }
+
+        [AuthorizeRoles("Admin","Finan")]
+        public ActionResult Cardiesel()
+        {
             return View();
         }
     }

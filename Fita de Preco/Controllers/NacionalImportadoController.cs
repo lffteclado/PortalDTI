@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using Fita_de_Preco.Security;
 
 namespace Fita_de_Preco.Controllers
 {
@@ -13,7 +14,7 @@ namespace Fita_de_Preco.Controllers
         List<string> itemNacional = new List<string>();
 
         // GET: NacionalImportado
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Index()
         {
             return View();
@@ -21,7 +22,7 @@ namespace Fita_de_Preco.Controllers
 
 
         [HttpPost]
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Upload()
         {
             int i = 0;
@@ -72,7 +73,7 @@ namespace Fita_de_Preco.Controllers
 
         #endregion
 
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult ArquivoNacImp()
         {
 

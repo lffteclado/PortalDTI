@@ -1,4 +1,5 @@
 ﻿using Fita_de_Preco.Models;
+using Fita_de_Preco.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,7 +20,7 @@ namespace Fita_de_Preco.Controllers
         //Concessionarias con = new Concessionarias();
 
         //Action inicial que chama a Pagina Index
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Index()
         {
             return View();
@@ -27,7 +28,7 @@ namespace Fita_de_Preco.Controllers
 
         //Action que é chamada para salvar o arquivo CSV
         [HttpPost]
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult FileUpLoad(FormCollection f)
         {
             //Carrega o DropDownlist para ser selecionada na proxima pagina chamada
@@ -63,7 +64,7 @@ namespace Fita_de_Preco.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [AuthorizeRoles("Admin", "Dti")]
         public ActionResult Arquivo(string CodConcessionaria)
         {
             ViewBag.CodConcessionaria = new SelectList

@@ -5,32 +5,37 @@
 
     UserManager user = new UserManager();
 
-    <ul class="nav navbar-nav">
-        @if (user.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin"))
-        {
-            <li>@Html.ActionLink("Correção de Arquivos", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Correção de Arquivos" })</li>
-            <li>@Html.ActionLink("Arquivos para Download", "Index", "Download", routeValues: null, htmlAttributes: new { title = "Arquivos para Download" })</li>
-            <li>@Html.ActionLink("Monitor", "Index", "Monitor", routeValues: null, htmlAttributes: new { title = "Monitor" })</li>
-            <li>@Html.ActionLink("XML", "Index", "XML", routeValues: null, htmlAttributes: new { title = "XML" })</li>
-            <li>@Html.ActionLink("Util", "Index", "ComandosUteis", routeValues: null, htmlAttributes: new { title = "Util" })</li>
-            
-            <li>@Html.ActionLink("Administração", "Index", "Admin", routeValues: null, htmlAttributes: new { title = "Administração" })</li>
-        }
+<ul class="nav navbar-nav">
+    @if (user.IsUserInRole(HttpContext.Current.User.Identity.Name, "Admin"))
+    {
+        <li>@Html.ActionLink("Correção de Arquivos", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Correção de Arquivos" })</li>
+        <li>@Html.ActionLink("Arquivos para Download", "Index", "Download", routeValues: null, htmlAttributes: new { title = "Arquivos para Download" })</li>
+        <li>@Html.ActionLink("Monitor", "Index", "Monitor", routeValues: null, htmlAttributes: new { title = "Monitor" })</li>
+        <li>@Html.ActionLink("XML", "Index", "XML", routeValues: null, htmlAttributes: new { title = "XML" })</li>
+        <li>@Html.ActionLink("Util", "Index", "ComandosUteis", routeValues: null, htmlAttributes: new { title = "Util" })</li>
 
-        @if (user.IsUserInRole(HttpContext.Current.User.Identity.Name, "Dti"))
-        {
-            <li>@Html.ActionLink("Correção de Arquivos", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Correção de Arquivos" })</li>
-            <li>@Html.ActionLink("Arquivos para Download", "Index", "Download", routeValues: null, htmlAttributes: new { title = "Arquivos para Download" })</li>
-            <li>@Html.ActionLink("Monitor", "Index", "Monitor", routeValues: null, htmlAttributes: new { title = "Monitor" })</li>
-            <li>@Html.ActionLink("XML", "Index", "XML", routeValues: null, htmlAttributes: new { title = "XML" })</li>
-            <li>@Html.ActionLink("Util", "Index", "ComandosUteis", routeValues: null, htmlAttributes: new { title = "Util" })</li>
-        }
+        <li>@Html.ActionLink("Administração", "Index", "Admin", routeValues: null, htmlAttributes: new { title = "Administração" })</li>
+    }
 
-        @if (user.IsUserInRole(HttpContext.Current.User.Identity.Name, "Finan"))
-        {
-            <li>@Html.ActionLink("Cardiesel", "Cardiesel", "ComandosUteis", routeValues: null, htmlAttributes: new { title = "Correção de Arquivos" })</li>
-        }
-    </ul>
+    @if (user.IsUserInRole(HttpContext.Current.User.Identity.Name, "Dti"))
+    {
+        <li>@Html.ActionLink("Correção de Arquivos", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Correção de Arquivos" })</li>
+        <li>@Html.ActionLink("Arquivos para Download", "Index", "Download", routeValues: null, htmlAttributes: new { title = "Arquivos para Download" })</li>
+        <li>@Html.ActionLink("Monitor", "Index", "Monitor", routeValues: null, htmlAttributes: new { title = "Monitor" })</li>
+        <li>@Html.ActionLink("XML", "Index", "XML", routeValues: null, htmlAttributes: new { title = "XML" })</li>
+        <li>@Html.ActionLink("Util", "Index", "ComandosUteis", routeValues: null, htmlAttributes: new { title = "Util" })</li>
+    }
+
+    @if (user.IsUserInRole(HttpContext.Current.User.Identity.Name, "Finan"))
+    {
+        <li>@Html.ActionLink("Cardiesel", "Cardiesel", "ComandosUteis", routeValues: null, htmlAttributes: new { title = "Cardiesel" })</li>
+    }
+
+    @if (user.IsUserInRole(HttpContext.Current.User.Identity.Name, "FinanGoias"))
+    {
+        <li>@Html.ActionLink("Goias", "Goias", "ComandosUteis", routeValues: null, htmlAttributes: new { title = "Goiás" })</li>
+    }
+</ul>
 
 
     using (Html.BeginForm("LogOff", "Login", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))

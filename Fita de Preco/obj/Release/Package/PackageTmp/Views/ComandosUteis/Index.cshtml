@@ -41,7 +41,7 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">Vendas Abaixo do Custo: &nbsp;<input type="checkbox" ng-change="bloquearCusto(930,0)" id="abaixoCustoCad" class="checkbox-inline" ng-model="custoBloqueado" /></li>
-                        <li class="list-group-item">Desconto Mínimo: &nbsp;<input type="checkbox" ng-change="bloquearDescMin(930,0)" id="descontoMinCad" ng-model="descMinBloqueado" /></li>
+                        <li class="list-group-item">Desconto Mínimo: &nbsp;<input type="checkbox" ng-change="bloquearDescMin(930,0)" id="descontoMinCad" ng-model="descMinBloqueado" disabled /></li>
                         <li class="list-group-item">Valor do Desconto Mínimo:&nbsp;<label id="valorDescMinCad">{{valorDescMin}}</label></li>
                         <li class="list-group-item">Venda Atípica:&nbsp;<input type="checkbox" ng-change="bloquearPlano(930, 526)" id="planoPagamentoCad" ng-model="planoBloqueado" /></li>
                     </ul>

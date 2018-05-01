@@ -50,13 +50,28 @@
                 $http.post('/api/v1/public/custo', custo);
 
                 //Bloquear Desconto Minimo
-                var desc = {
+                //Desconsiderando Cardiesel
 
-                    "CodigoEmpresa" : item.CodEmpresa,
-                    "CodigoLocal" : item.Local,
-                    "Bloqueado" : "V",
-                    "ValorMin" : "51.00"
-                }
+                if (item.CodEmpresa == "930") {
+
+                    var desc = {
+
+                        "CodigoEmpresa": "0",
+                        "CodigoLocal": "0",
+                        "Bloqueado": "V",
+                        "ValorMin": "51.00"
+                    }
+
+                } else {
+
+                    var desc = {
+
+                        "CodigoEmpresa": item.CodEmpresa,
+                        "CodigoLocal": item.Local,
+                        "Bloqueado": "V",
+                        "ValorMin": "51.00"
+                    }
+                }            
                 
                 $http.post('/api/v1/public/desconto', desc);
 

@@ -35,19 +35,8 @@ namespace Fita_de_Preco.Controllers
                 if (retorno[1] == "success" || usu.Senha == Usuario.senhaUsu) //Autenticando com o Zimbra
                 {
                     //string nome = retorno[0];
-                    string nome = usu.Email;
-                    /*
-                    string nome = (from n in db.Usuarios
-                                   where n.Nome == usu.Nome
-                                   select n.Funcionario.Nome).First();
-
-                    string cargo = (from n in db.Usuarios
-                                    where n.Nome == usu.Nome
-                                    select n.Funcionario.Cargo.Nome).First();
-                    */
-
-                    //Roles.AddUserToRole(nome, cargo);
-
+                    string nome = usu.Email;                    
+                    
                     //Rotina para armazenar o Usuário Logado no cookie
                     FormsAuthentication.SetAuthCookie(nome, false);
 
@@ -56,6 +45,10 @@ namespace Fita_de_Preco.Controllers
                     if (email[1].Contains("cardiesel"))
                     {                        
                         return RedirectToAction("Cardiesel", "ComandosUteis");
+                    }
+                    else if (email[1].Contains("goiascaminhoes")) //cadastro01@goiascaminhoes.com.br
+                    {
+                        return RedirectToAction("Goias", "ComandosUteis");
                     }
                     else
                     {

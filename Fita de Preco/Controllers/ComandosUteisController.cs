@@ -18,5 +18,11 @@ namespace Fita_de_Preco.Controllers
         {
             return View();
         }
+
+        [AuthorizeRoles("Admin", "FinanGoias")]
+        public ActionResult Goias()
+        {
+            return View();
+        }
     }
 }

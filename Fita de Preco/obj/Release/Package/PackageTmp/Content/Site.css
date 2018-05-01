@@ -48,9 +48,12 @@ footer{
 }
 
 .jumbotron {
-
-   text-align:center;
-   background: rgb(200, 54, 54); /* This is for ie8 and below */
-   background: rgba(0, 148, 255, 0.31);
-   color:antiquewhite;
+    
+    margin:100px 0px 0px 100px;
+    
+    width: 900px;
+    height: 350px;
+    background: rgb(200, 54, 54); /* This is for ie8 and below */
+    background: rgba(23, 23, 23, 0.70);
+    color: antiquewhite;
 }

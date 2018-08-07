@@ -42,11 +42,11 @@ namespace Fita_de_Preco.Controllers
 
                     string[] email = usu.Email.Split('@');
 
-                    if (email[1].Contains("cardiesel"))
+                    if (email[1].Contains("cardiesel") || email[1].Contains("grupovdl"))
                     {                        
                         return RedirectToAction("Cardiesel", "ComandosUteis");
                     }
-                    else if (email[1].Contains("goiascaminhoes")) //cadastro01@goiascaminhoes.com.br
+                    else if (email[1].Contains("goiascaminhoes") || email[1].Contains("matogrossocaminhoes")) //cadastro01@goiascaminhoes.com.br
                     {
                         return RedirectToAction("Goias", "ComandosUteis");
                     }

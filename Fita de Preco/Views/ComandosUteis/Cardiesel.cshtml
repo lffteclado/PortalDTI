@@ -31,5 +31,31 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6" ng-controller="uberCtrl" ng-init="atualizaCasa()">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Uberlandia</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Venda Atípica:&nbsp;<input type="checkbox" ng-change="bloquearPlano(2620, 526)" id="planoPagamentoRed" ng-model="planoBloqueado" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" ng-controller="mocCtrl" ng-init="atualizaCasa()">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Montes Claros</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Venda Atípica:&nbsp;<input type="checkbox" ng-change="bloquearPlano(3140, 526)" id="planoPagamentoRed" ng-model="planoBloqueado" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

@@ -353,7 +353,6 @@ C:\Users\luis\source\repos\PortalDTI\Fita de Preco\bin\System.Web.WebPages.Deplo
 C:\Users\luis\source\repos\PortalDTI\Fita de Preco\bin\System.Web.WebPages.Razor.xml
 C:\Users\luis\source\repos\PortalDTI\Fita de Preco\bin\Antlr3.Runtime.pdb
 C:\Users\luis\source\repos\PortalDTI\Fita de Preco\bin\Newtonsoft.Json.xml
-C:\Users\luis\source\repos\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csprojAssemblyReference.cache
 C:\Users\luis\source\repos\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csproj.CoreCompileInputs.cache
 C:\Users\luis\source\repos\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.csproj.CopyComplete
 C:\Users\luis\source\repos\PortalDTI\Fita de Preco\obj\Debug\Fita de Preco.dll

@@ -12,7 +12,7 @@ namespace Fita_de_Preco.Models
     public class ServidorLDAP
     {
         private static string _nome = "Zimbra";
-        private static string _ip = "192.168.100.5";
+        private static string _ip = "71.6.200.220";
         private static int _porta = 389;
         private static string _user = "uid=zimbra,cn=admins,cn=zimbra";
         private static string _senha = "DrpmsNtqWu";

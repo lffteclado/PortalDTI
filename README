@@ -1,1 +1,6 @@
-Teste de alteração
+Portal responsável por várias atividades dentro do setor de Informática:
+Criação dos scripts para acerto dos itens nacionais e importados, acerto da fita de preço, utilizando arquivos em formato CSV e arquivos de texto enviados pela Mercedes;
+Busca de xml de notas paradas no Gerenciador para facilitar a identificação de erros;
+Desbloqueio e bloqueio de Venda Atípica, Venda abaixo do custo, Desconto minimo, de todas as concessionárias do Grupo em uma unica tela.
+Monitoração em tempo real dos recursos liberados(Venda Atípica, Venda abaixo do custo, Desconto minimo) de todas as concessionárias do Grupo em uma unica tela.
+Acesso para a equipe do Financeiro conseguir liberar o Plano Venda Atípica sem precisar acessar o T-Systems, agilizando o atendimento.
